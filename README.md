@@ -1,11 +1,11 @@
-# AWS Cloud Support Portfolio
+# AWS Python Terraform Portfolio
 
 ![AWS](https://img.shields.io/badge/AWS-Cloud-yellow)
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Terraform](https://img.shields.io/badge/Terraform-HCL-lightgrey)
 ![Portfolio](https://img.shields.io/badge/Portfolio-Ready-green)
 
-This repository showcases **hands-on troubleshooting scenarios for AWS services**, demonstrating practical skills in EC2, Lambda, S3, IAM, and more. It is designed for entry-level cloud support and NOC positions, simulating real-world support workflows from initial issue to resolution.
+This repository showcases hands-on troubleshooting scenarios for AWS services, demonstrating practical skills in EC2, Lambda, S3, IAM, and more. Designed for entry-level cloud support and NOC positions, simulating real-world support workflows from initial issue to resolution.
 
 ---
 
@@ -13,7 +13,7 @@ This repository showcases **hands-on troubleshooting scenarios for AWS services*
 - [EC2 Troubleshooting](#ec2-troubleshooting)
 - [Lambda Error Handling](#lambda-error-handling)
 - [S3 IAM Access](#s3-iam-access)
-- [Screenshots](#screenshots)
+- [Screenshots Overview](#screenshots-overview)
 - [Contact](#contact)
 
 ---
@@ -23,9 +23,9 @@ This repository showcases **hands-on troubleshooting scenarios for AWS services*
 **Scenario:** Launch an EC2 instance via CloudFormation, verify connectivity, and troubleshoot security group issues.
 
 **Files:**
-- `scenarios/ec2-troubleshoot/cloudformation.yaml` – CloudFormation template
-- `scenarios/ec2-troubleshoot/ec2-troubleshoot.txt` – Step-by-step notes
-- `scenarios/ec2-troubleshoot/instructions.md` – Instructions
+- `scenarios/ec2-troubleshoot/cloudformation.yaml`
+- `scenarios/ec2-troubleshoot/ec2-troubleshoot.txt`
+- `scenarios/ec2-troubleshoot/instructions.md`
 
 **Key Steps:**
 1. Deploy CloudFormation stack
@@ -34,15 +34,17 @@ This repository showcases **hands-on troubleshooting scenarios for AWS services*
 4. Test connectivity using ping and SSH
 
 **Screenshots:**
-![Stack Created](docs/screenshots/ec2-stack-created.png)
-![Security Group Config](docs/screenshots/ec2-sg-config.png)
-![Ping Test](docs/screenshots/ec2-ping-test.png)
+![Stack Created](docs/screenshots/01_stack_created.png)
+![Security Group Config](docs/screenshots/02_security_group.png)
+![EC2 Instance Details](docs/screenshots/04_ec2.png)
+![Security Group Verification](docs/screenshots/05_security_group.png)
+![Ping Test](docs/screenshots/06_connectivity_ping_confirm.png)
 
 **Skills Demonstrated:**
-- EC2 instance deployment
+- EC2 deployment
 - Security group troubleshooting
-- SSH connectivity verification
-- CloudFormation understanding
+- SSH connectivity
+- CloudFormation workflow
 
 ---
 
@@ -54,19 +56,20 @@ This repository showcases **hands-on troubleshooting scenarios for AWS services*
 - `scenarios/lambda-error/instructions.md`
 
 **Key Steps:**
-1. Deploy the Lambda function
+1. Deploy Lambda function
 2. Trigger an error event
 3. Analyze CloudWatch logs
 4. Update code or IAM permissions
-5. Redeploy and test success
+5. Redeploy and verify success
 
-**Screenshots:**
-![Lambda Error](docs/screenshots/lambda-error-log.png)
-![Lambda Success](docs/screenshots/lambda-success.png)
+**Screenshots:**  
+*(Replace with your actual Lambda images)*
+![Lambda Error](docs/screenshots/???.png)
+![Lambda Success](docs/screenshots/???.png)
 
 **Skills Demonstrated:**
-- Lambda deployment and debugging
-- IAM permission troubleshooting
+- Lambda deployment/debugging
+- IAM permissions troubleshooting
 - CloudWatch log analysis
 
 ---
@@ -85,9 +88,10 @@ This repository showcases **hands-on troubleshooting scenarios for AWS services*
 4. Update IAM or bucket policy
 5. Verify access
 
-**Screenshots:**
-![S3 Access Denied](docs/screenshots/s3-access-denied.png)
-![S3 Access Success](docs/screenshots/s3-access-success.png)
+**Screenshots:**  
+*(Replace with your actual S3 images)*
+![S3 Access Denied](docs/screenshots/???.png)
+![S3 Access Success](docs/screenshots/???.png)
 
 **Skills Demonstrated:**
 - IAM policy debugging
@@ -97,9 +101,9 @@ This repository showcases **hands-on troubleshooting scenarios for AWS services*
 ---
 
 ## Screenshots Overview
-All screenshots are stored in `docs/screenshots/`. They demonstrate:
+All screenshots are stored in `docs/screenshots/` and illustrate:
 - CloudFormation stack creation
-- EC2 instance deployment and connectivity
+- EC2 deployment and connectivity
 - Lambda debugging and resolution
 - IAM/S3 access troubleshooting
 
@@ -112,6 +116,6 @@ All screenshots are stored in `docs/screenshots/`. They demonstrate:
 ---
 
 ## About
-This portfolio simulates a **Cloud Support Engineer workflow**, documenting real-world AWS troubleshooting scenarios. Each case study follows a support ticket lifecycle from customer report to root cause analysis and resolution.
+This portfolio simulates a Cloud Support Engineer workflow, documenting AWS troubleshooting scenarios from support ticket to resolution.
 
 **Topics:** terraform, incident-response, cloudwatch, ci-cd, infrastructure-as-code, aws-security, noc, cloudops, cloud-support, python-automation
