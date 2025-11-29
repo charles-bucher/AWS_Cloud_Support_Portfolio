@@ -30,7 +30,7 @@ Automation & IaC	Python scripting, Terraform, CloudFormation basics
 Monitoring & Logging	CloudWatch metrics, dashboards, log analysis
 Operational Troubleshooting	Incident simulation, root cause analysis (RCA), SLA thinking, structured problem-solving
 Version Control / DevOps	Git, GitHub Actions, CI/CD pipelines
-📂 Scenarios & Key Screenshots
+📂 Scenarios & Screenshots
 1️⃣ EC2 Troubleshooting
 
 Objective: Launch an EC2 instance via CloudFormation and verify connectivity.
@@ -49,7 +49,7 @@ Validate root cause & resolution
 
 Screenshots:
 
-Stack Creation Confirmation
+Stack Created
 
 
 Security Group Troubleshooting
