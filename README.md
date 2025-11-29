@@ -1,120 +1,107 @@
-⚡ Cloud Support Simulation Portfolio
+⚡ AWS Cloud Support Simulation
 
-👋 Hi, I’m Charles Bucher — a self-taught Cloud Support & NOC Engineer.
-This repo simulates real AWS support workflows: incidents, troubleshooting, investigations, fixes, and validations.
-Everything here mirrors what junior cloud engineers, NOC analysts, and L1/L2 support specialists do every day.
+[![GitHub stars](https://img.shields.io/github/stars/charles-bucher/AWS_Cloud_Support_Sim?style=social)](https://github.com/charles-bucher/AWS_Cloud_Support_Sim/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/charles-bucher/AWS_Cloud_Support_Sim?style=social)](https://github.com/charles-bucher/AWS_Cloud_Support_Sim/network/members)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Terraform](https://img.shields.io/badge/Terraform-1.5.1-623CE4?logo=terraform&logoColor=white)](https://www.terraform.io/)
+[![AWS](https://img.shields.io/badge/AWS-CloudOps-orange?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+[![CloudWatch](https://img.shields.io/badge/CloudWatch-monitoring-lightgrey?logo=amazon-aws&logoColor=orange)](https://aws.amazon.com/cloudwatch/)
 
-🚀 What This Portfolio Demonstrates
+---
 
-EC2 troubleshooting (SG issues, connectivity, provisioning failures)
+## 👋 About This Repository
+This repository **simulates a Cloud Support engineering workflow**, documenting real-world AWS troubleshooting scenarios. Each case study follows the **support ticket lifecycle** from the initial customer report through **root cause analysis, resolution, and validation**.
 
-Lambda error analysis (CloudWatch logs, IAM failures, code bugs)
+It is designed to demonstrate the practical skills and operational thinking that **junior cloud engineers, NOC analysts, and L1/L2 support specialists** use every day.
 
-S3 & IAM access debugging (permissions, bucket policies, CLI testing)
+---
 
-Operational workflows (root-cause analysis, structured incident handling)
+## 🚀 Skills Demonstrated
+| Category | Skills & Tools |
+|----------|----------------|
+| **AWS Services** | EC2, Lambda, S3, IAM, CloudWatch, CloudFormation |
+| **Automation & IaC** | Python scripting, Terraform, CloudFormation basics |
+| **Monitoring & Logging** | CloudWatch metrics, dashboards, log analysis |
+| **Operational Troubleshooting** | Incident simulation, RCA, SLA thinking, structured problem-solving |
+| **Version Control / DevOps** | Git, GitHub Actions |
 
-Automation & IaC (Terraform, Python, CloudFormation)
+---
 
-Version control discipline (Git, GitHub Actions)
+## 📂 Scenarios (with Screenshots)
 
-This is the “I actually know how to troubleshoot cloud systems” repo.
+### 1️⃣ EC2 Troubleshooting
+**Objective:** Launch an EC2 instance via CloudFormation and verify connectivity.  
+**Key Steps:**  
+- Deploy CloudFormation stack  
+- Verify EC2 provisioning  
+- Configure & troubleshoot Security Groups  
+- Test connectivity (SSH / ping)  
+- Validate root cause and resolution  
 
-🛠️ Core Skills Demonstrated
-Category	Skills
-AWS Services	EC2, Lambda, S3, IAM, CloudWatch, CloudFormation
-Automation & IaC	Terraform, Python scripting
-Monitoring & Logging	CloudWatch metrics & log analysis
-Operational Troubleshooting	Incident simulation, RCA, SLA thinking
-Version Control / DevOps	Git, GitHub Actions
-📂 Portfolio Scenarios (with embedded screenshots)
-1️⃣ EC2 Troubleshooting
+**Screenshots:** EC2 Creation, Security Group Debugging
 
-Objective: Launch an EC2 instance using CloudFormation and verify connectivity.
+---
 
-Key Steps
+### 2️⃣ Lambda Error Handling
+**Objective:** Diagnose and resolve Lambda execution failures.  
+**Key Steps:**  
+- Deploy Lambda function  
+- Trigger controlled error  
+- Investigate CloudWatch logs  
+- Fix IAM policy or function code  
+- Redeploy and validate success  
 
-Deploy CloudFormation stack
+**Screenshots:** Lambda Error in Console, CloudWatch Log Investigation
 
-Verify EC2 provisioning
+---
 
-Configure & troubleshoot Security Groups
+### 3️⃣ S3 IAM Access Debugging
+**Objective:** Troubleshoot access denied issues for an IAM user accessing S3.  
+**Key Steps:**  
+- Identify IAM user/role  
+- Review IAM policy and bucket policy  
+- Reproduce failure using AWS CLI  
+- Update permissions  
+- Validate successful access  
 
-Test connectivity (SSH / ping)
+**Screenshots:** Access Denied, Policy Fix Applied
 
-Validate root cause and resolution
+---
 
-🔍 Screenshots
-EC2 Creation
-
-Security Group Debugging
-
-2️⃣ Lambda Error Handling
-
-Objective: Diagnose and resolve Lambda execution failures.
-
-Key Steps
-
-Deploy Lambda function
-
-Trigger a controlled error
-
-Investigate CloudWatch logs
-
-Fix IAM policy or function code
-
-Redeploy and validate success
-
-🔍 Screenshots
-Lambda Error in Console
-
-CloudWatch Log Investigation
-
-3️⃣ S3 IAM Access Debugging
-
-Objective: Troubleshoot access denied issues for an IAM user accessing S3.
-
-Key Steps
-
-Identify IAM user/role
-
-Review IAM policy and bucket policy
-
-Reproduce failure using AWS CLI
-
-Update permissions
-
-Validate successful access
-
-🔍 Screenshots
-Access Denied
-
-Policy Fix Applied
-
-📁 Repository Structure
+## 📁 Repository Structure
 AWS_Cloud_Support_Sim/
 ├── docs/
-│   └── screenshots/        # All scenario screenshots
-├── scenarios/              # EC2, Lambda, S3 troubleshooting exercises
-├── src/AWS_Project/        # Python automation scripts
-├── main.py                 # Python entry point
-├── utils.py                # Helpers
-├── main.tf                 # Terraform template
-├── requirements.txt        # Python dependencies
-└── README.md               # This file
+│ └── screenshots/ # Scenario screenshots
+├── scenarios/ # EC2, Lambda, S3 exercises
+├── src/AWS_Project/ # Python automation scripts
+├── main.py # Python entry point
+├── utils.py # Helper functions
+├── main.tf # Terraform template
+├── requirements.txt # Python dependencies
+└── README.md # This file
 
-📬 Contact
+yaml
+Copy code
 
-Email: quietopscb@gmail.com
+---
 
-GitHub: https://github.com/charles-bucher
+## 🔥 Career Goal
+- Start as **Cloud Support / NOC Engineer** (entry-level, remote preferred)  
+- Grow through **hands-on troubleshooting, automation, and documentation**  
+- Build measurable impact via **CloudOps projects and operational problem-solving**
 
-LinkedIn: https://www.linkedin.com/in/charles-bucher-cloud
+---
 
-💡 Notes
+## 📬 Contact
+- 📧 Email: [quietopscb@gmail.com](mailto:quietopscb@gmail.com)  
+- GitHub: [https://github.com/charles-bucher](https://github.com/charles-bucher)  
+- LinkedIn: [https://linkedin.com/in/charles-bucher-cloud](https://linkedin.com/in/charles-bucher-cloud)  
+- Indeed: [https://profile.indeed.com/p/charlesb-x0xr5fx](https://profile.indeed.com/p/charlesb-x0xr5fx)
 
-All scenarios mirror real production troubleshooting patterns
+---
 
-Costs can apply when provisioning AWS resources — clean them up
+## 💡 Notes
+- All scenarios mirror **real production troubleshooting patterns**  
+- Provisioned AWS resources **may incur costs** — clean them up after exercises  
+- Screenshots show **reproducible steps and validated fixes**
 
-Screenshots show reproducible steps and validated fixes
