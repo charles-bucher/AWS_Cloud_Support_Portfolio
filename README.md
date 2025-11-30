@@ -4,20 +4,20 @@
 [![GitHub issues](https://img.shields.io/github/issues/charles-bucher/AWS_Cloud_Support_Sim)](https://github.com/charles-bucher/AWS_Cloud_Support_Sim/issues)  
 [![License](https://img.shields.io/github/license/charles-bucher/AWS_Cloud_Support_Sim)](LICENSE)  
 
-Simulate real-world AWS Cloud Support workflows, gain hands-on troubleshooting experience, and level up your CloudOps skills.
+Simulate real-world AWS Cloud Support workflows, gain hands-on troubleshooting experience, and demonstrate measurable CloudOps impact.
 
 ---
 
 ## 👋 About This Repository
 
-This repository provides realistic AWS support scenarios following the full lifecycle of a cloud support ticket:
+This repository provides **realistic AWS support scenarios** following the full lifecycle of a cloud support ticket:
 
 1. Customer report / incident trigger  
 2. Root cause analysis  
 3. Resolution implementation  
 4. Verification & validation  
 
-Ideal for aspiring **Cloud Support Engineers**, **NOC Analysts**, and **L1/L2 Support Specialists**, demonstrating practical skills, operational thinking, and automation knowledge.
+Ideal for **Cloud Support Engineers, NOC Analysts, and L1/L2 Support Specialists**, showcasing practical skills, automation knowledge, and operational problem-solving.
 
 ---
 
@@ -36,14 +36,12 @@ Ideal for aspiring **Cloud Support Engineers**, **NOC Analysts**, and **L1/L2 Su
 
 ### 1️⃣ EC2 Troubleshooting
 
-**Objective:** Launch an EC2 instance via CloudFormation and verify connectivity.
+**Objective:** Launch an EC2 instance via CloudFormation and verify connectivity.  
 
-**Key Steps:**
-- Deploy CloudFormation stack
-- Verify EC2 provisioning
-- Configure & troubleshoot Security Groups
-- Test connectivity (SSH / ping)
-- Validate root cause & resolution
+**Key Steps & Achievements:**  
+- Deployed CloudFormation stack and provisioned EC2 successfully  
+- Configured Security Groups and resolved connectivity issues  
+- Validated root cause and verified resolution  
 
 **Screenshots:**  
 ![EC2 Connectivity Ping](docs/screenshots/ACSS_01_ec2_connectivity_ping.png)  
@@ -57,12 +55,12 @@ Ideal for aspiring **Cloud Support Engineers**, **NOC Analysts**, and **L1/L2 Su
 
 ### 2️⃣ Python / Automation
 
-**Objective:** Automate CloudOps tasks and manage code deployments.
+**Objective:** Automate CloudOps tasks and manage deployments efficiently.  
 
-**Key Steps:**
-- Commit Python scripts to Git
-- Install dependencies via `requirements.txt`
-- Run automation scripts
+**Key Steps & Achievements:**  
+- Committed Python scripts to Git and automated deployment tasks  
+- Installed dependencies via `requirements.txt` and executed scripts  
+- Reduced manual intervention and verified results  
 
 **Screenshots:**  
 ![Python Git Commit](docs/screenshots/ACSS_07_python_git_commit.png)  
@@ -81,7 +79,7 @@ Ideal for aspiring **Cloud Support Engineers**, **NOC Analysts**, and **L1/L2 Su
 
 - Start as **Cloud Support / NOC Engineer** (remote preferred)  
 - Gain hands-on troubleshooting, automation, and documentation experience  
-- Build measurable impact via CloudOps projects and operational problem-solving  
+- Demonstrate measurable CloudOps impact through reproducible scenarios  
 
 ---
 
@@ -104,3 +102,5 @@ Ideal for aspiring **Cloud Support Engineers**, **NOC Analysts**, and **L1/L2 Su
 ## 🔑 Keywords
 
 terraform, incident-response, cloudwatch, ci-cd, infrastructure-as-code, aws-security, noc, security-automation, devsecops, cloudops, cloud-support, python-automation, aws-guardduty
+
+
