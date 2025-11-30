@@ -1,4 +1,6 @@
-⚡ AWS Cloud Support Simulation (Hands-On Troubleshooting Lab)
+🟦 AWS Cloud Support Simulation
+
+A hands-on, job-ready training lab for real AWS Cloud Support workflows.
 
 
 
@@ -9,183 +11,121 @@
 
 
 
-A complete AWS Cloud Support & CloudOps simulation designed to demonstrate real troubleshooting skills, root-cause analysis, automation, monitoring, and infrastructure management.
+📌 Overview
 
-This repository was built to align with Cloud Support Engineer, NOC Engineer, CloudOps, and Site Support roles.
+This project simulates the real day-to-day workload of an AWS Cloud Support Engineer.
+Instead of theory, you walk through actual troubleshooting flows used by support teams:
 
-🧩 Project Overview
+Broken EC2 applications
 
-This repo simulates the actual workflow used in Cloud Support environments:
+CloudWatch log analysis
 
-Incident intake → analysis → resolution → validation
+IAM access failures
 
-Debugging AWS services (EC2, S3, IAM, Lambda)
+VPC networking issues
 
-Identifying system misconfigurations and network issues
+Real ticket-style scenarios
 
-Automating CloudOps tasks with Python
+Structured escalation workflow
 
-Validating infrastructure with Terraform / CloudFormation
-
-Documenting reproducible fixes
-
-Recruiters can evaluate CloudOps competency directly from this repo.
-
-🚀 Core Skills Demonstrated
-✔ Cloud Support & Troubleshooting
-
-SSH failures, network reachability, EC2 access
-
-IAM permission debugging
-
-S3 access issues
-
-Lambda execution failures
-
-Log and metric interpretation (CloudWatch)
-
-✔ Automation
-
-Python scripting for operational tasks
-
-Log parsing, validation, CLI automation
-
-Dependency management (requirements.txt)
-
-✔ Infrastructure as Code
-
-Terraform provisioning
-
-CloudFormation deployment & validation
-
-✔ Monitoring & Logging
-
-AWS CloudWatch: metrics, alarms, logs
-
-Diagnostic workflow: identify → isolate → remediate
-
-✔ DevOps Practices
-
-Git version control
-
-GitHub Actions
-
-Repo organization, code quality, documentation
-
-This layout is designed for ATS keyword detection and quick recruiter scanning.
+If you’re aiming for Cloud Support, CloudOps, NOC, or SRE, this is the type of repo that gets interviews.
 
 🏗️ Architecture Diagram
+![AWS Support Flow](Diagrams/AWSSupportFlowDiagram.png)
 
-This flow illustrates the lifecycle of every troubleshooting scenario in this repo—incident → RCA → remediation → verification.
+🔧 Features
 
-📂 Scenario Catalog (Recruiter View)
-1️⃣ EC2 Troubleshooting Scenario
+End-to-end AWS troubleshooting simulations
 
-Objectives:
+Ticket intake → analysis → resolution flow
 
-Deploy EC2 via CloudFormation
+Automated diagnostics (logs, pings, EC2 metadata)
 
-Verify provisioning
+Reproduce common customer issues
 
-Fix Security Group rules
+Clean, repeatable lab environment
 
-Restore SSH connectivity
+Skills aligned with AWS Cloud Support Associate / CloudOps Engineer roles
 
-Document RCA + resolution steps
+🚦 What You Learn
 
-Screenshots:
+How AWS Support approaches incidents
+
+How to gather evidence and eliminate noise
+
+How to escalate with clarity
+
+How to troubleshoot methodically under pressure
+
+How to communicate root cause
+
+📸 Screenshots
+
+(All loaded from docs/screenshots/ — replace filenames if needed.)
+
+## 📸 Screenshots
+
+### 🟦 Support Dashboard
+![Support Dashboard](docs/screenshots/support_dashboard.png)
+
+### 🟧 Ticket Intake
+![Ticket Intake](docs/screenshots/ticket_intake.png)
+
+### 🟩 Troubleshooting Workflow
+![Troubleshooting Workflow](docs/screenshots/troubleshooting_workflow.png)
+
+### 🟪 CloudWatch Logs Review
+![CloudWatch Logs](docs/screenshots/cloudwatch_logs.png)
+
+### 🟥 EC2 Connectivity Diagnostics
+![EC2 Diagnostics](docs/screenshots/ec2_connectivity.png)
+
+### 🟨 Issue Resolution Output
+![Issue Resolution](docs/screenshots/issue_resolution.png)
+
+📂 Project Structure
+AWS_Cloud_Support_Sim/
+│
+├── docs/
+│   └── screenshots/
+│
+├── Diagrams/
+│   └── AWSSupportFlowDiagram.png
+│
+├── scenarios/
+├── scripts/
+└── README.md
+
+🚀 How to Use
+git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim
+cd AWS_Cloud_Support_Sim
 
 
+Run any scenario:
 
+python scenarios/ec2_connectivity.py
+python scenarios/log_analysis.py
 
-2️⃣ Python Automation Scenario
+🎯 Who This Is For
 
-Objectives:
+Cloud Support Engineer candidates
 
-Run Python-based operational tasks
+Junior CloudOps techs
 
-Use scripts for log validation
+NOC Analysts upskilling into cloud
 
-Automate repetitive CloudOps steps
+Anyone building a cloud troubleshooting portfolio
 
-Screenshots:
+💼 ATS-Optimized Keywords
 
+Cloud Support • AWS • EC2 • VPC • IAM • CloudWatch • Log Analysis • Diagnostics • Incident Response • Root Cause • CloudOps • Python Automation • Debugging • Technical Troubleshooting • Support Escalation
 
+🤝 Contributions
 
+Open to PRs, issues, and improvements.
+This project is built to help others break into cloud.
 
-🔧 How to Run the Lab
-# Clone the repository
-git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
+⭐ If this helped you, star the repo
 
-# Install Python dependencies
-pip install -r requirements.txt
-
-# (Optional) Deploy sample AWS infrastructure
-terraform init
-terraform apply
-
-
-Then select a scenario from /scenarios and follow the documented troubleshooting path.
-
-🎯 Role Alignment
-
-This project is aligned with the responsibilities of:
-
-AWS Cloud Support Associate / Engineer
-
-NOC Analyst / NOC Technician
-
-Cloud Support Specialist
-
-Cloud Operations Engineer (CloudOps)
-
-L1/L2 Technical Support (Cloud Focus)
-
-Your repo demonstrates:
-
-Incident diagnosis
-
-Real AWS debugging
-
-Automation mindset
-
-Infrastructure validation
-
-Documentation discipline
-
-Production support awareness
-
-Exactly what recruiters look for.
-
-🔥 Career Objective
-
-Build a portfolio of hands-on, validated Cloud Support scenarios that show:
-
-AWS troubleshooting competency
-
-Python and automation capability
-
-Infra reliability thinking
-
-Log-based debugging
-
-Endpoint + network diagnostics
-
-Infrastructure-as-code workflow usage
-
-This repo is intentionally crafted to be recruiter-ready and ATS-friendly.
-
-📬 Contact
-
-GitHub: https://github.com/charles-bucher
-
-LinkedIn: https://www.linkedin.com/in/charles-bucher-cloud
-
-Email: quietopscb@gmail.com
-
-📝 Additional Notes
-
-All scenarios mirror real Cloud Support incident patterns
-
-AWS resources may incur cost — destroy when finished
+It pushes the project higher and signals hiring managers that you’re active.
 
