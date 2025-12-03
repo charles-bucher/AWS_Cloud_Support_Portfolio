@@ -1,1 +1,0 @@
-python sync_screenshots.py
