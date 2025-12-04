@@ -1,5 +1,11 @@
 # AWS Cloud Support Simulation Lab
 
+
+## Workflow Architecture
+```mermaid
+[Copy the Cloud Support Sim diagram from artifact 2]
+```
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/charles-bucher/AWS_Cloud_Support_Sim/main.yml)](https://github.com/charles-bucher/AWS_Cloud_Support_Sim/actions)
 [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
