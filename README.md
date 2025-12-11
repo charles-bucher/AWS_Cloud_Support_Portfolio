@@ -1,5 +1,30 @@
 # AWS Cloud Support Simulation
 
+## TL;DR
+
+Hands-on AWS Cloud Support simulation project designed to build practical troubleshooting skills.
+
+**What it does:**
+- Simulates EC2, VPC, S3, Lambda, and GuardDuty issues
+- Demonstrates network diagnostics, security group fixes, and CloudFormation troubleshooting
+- Automates monitoring tasks with Python/Boto3
+- Infrastructure as Code via Terraform
+
+**Built for:** Learning and demonstrating Cloud Support & CloudOps skills.
+
+**Key Skills Practiced:** EC2/VPC troubleshooting, IAM & Security Groups, CloudFormation, CloudWatch monitoring, Python automation, Git workflows.
+
+**Quick Start:**
+```bash
+git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
+cd AWS_Cloud_Support_Sim
+python -m venv venv
+.\venv\Scripts\activate      # Windows
+pip install -r requirements.txt
+aws configure
+python main.py
+
+
 [![AWS](https://img.shields.io/badge/AWS-EC2_VPC_S3_CloudFormation-FF9900?style=flat-square&logo=amazon-aws)](https://aws.amazon.com/)
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python)](https://www.python.org/)
 [![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat-square&logo=terraform)](https://www.terraform.io/)
