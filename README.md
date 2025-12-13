@@ -1,4 +1,7 @@
 # AWS Cloud Support Simulation 🛠️☁️
+
+![AWS Cloud Support Diagram](./Diagrams/AWS_Cloud_Support_Diagram.png)
+
 **License:** MIT | **Tech:** AWS, Python, Terraform  
 
 ---
