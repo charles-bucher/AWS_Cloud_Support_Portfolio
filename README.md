@@ -528,3 +528,13 @@ If you're:
 *[⬆️ Back to Top](#aws-cloud-support-simulation-️️)*
 
 </div>
+![00_code_tested.png](screenshots/00_code_tested.png)
+![01_vpc_setup.png](screenshots/01_vpc_setup.png)
+![02_subnets_route_tables.png](screenshots/02_subnets_route_tables.png)
+![03_security_groups_nacls.png](screenshots/03_security_groups_nacls.png)
+![04_git_workflow.png](screenshots/04_git_workflow.png)
+![05_guardduty_automation.png](screenshots/05_guardduty_automation.png)
+![06_s3_buckets.png](screenshots/06_s3_buckets.png)
+![07_iam_roles.png](screenshots/07_iam_roles.png)
+![08_service_health.png](screenshots/08_service_health.png)
+![09_cloudwatch_validation.png](screenshots/09_cloudwatch_validation.png)
