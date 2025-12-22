@@ -26,42 +26,19 @@
 *Complete cloud support simulation architecture showing VPC, EC2, Lambda, S3, GuardDuty, and troubleshooting scenarios*
 
 ---
+### 📸 Real AWS Infrastructure - Screenshots
 
-## 📸 Real AWS Infrastructure - Screenshots
-
-### 1. VPC Setup & Architecture
-![VPC Setup](screenshots/ACSS_01_VPC_Setup.png)
-*Complete VPC configuration with subnets, internet gateway, and routing*
-
-### 2. Subnets & Route Tables
-![Subnets and Route Tables](screenshots/ACSS_02_Subnets_RouteTables.PNG)
-*Public/private subnet configuration with custom route tables for multi-tier architecture*
-
-### 3. Security Groups & Network ACLs
-![Security Groups and NACLs](screenshots/ACSS_03_SecurityGroups_NACLs.png)
-*Security group rules and Network ACLs controlling inbound/outbound traffic*
-
-### 4. Professional Git Workflow
-![Git Branch-Merge Workflow](screenshots/ACSS_04_Git-Branch-Merge-Workflow.png)
-*Git branching strategy with feature branches, pull requests, and code reviews*
-
-### 5. Python Boto3 Automation - GuardDuty Findings
-![GuardDuty Automation](screenshots/ACSS_05_Python-Boto3-GuardDuty-Findings-Automation.png)
-*Python script automating GuardDuty security findings analysis and incident response*
-
-### 6. S3 Bucket Configuration
-![S3 Buckets](screenshots/ACSS_06_S3_Buckets.PNG)
-*S3 bucket policies, versioning, encryption, and access control configurations*
-
-### 7. IAM Roles & Policies
-![IAM Configuration](screenshots/ACSS_07_IAM_Roles_Policies.PNG)
-*Least-privilege IAM roles and policies for secure cloud operations*
-
-### 8. Service Health & Monitoring
-![Service Health Dashboard](screenshots/ACSS_08_Service_Health.PNG)
-*CloudWatch monitoring, alarms, and AWS service health status tracking*
-
----
+| # | Scenario | Screenshot | Description |
+|---|---------|------------|-------------|
+| 00 | Lab Environment Verified | ![00_lab_environment_verified](screenshots/00_lab_environment_verified.png) | Initial environment check to ensure all AWS services are deployed and accessible. |
+| 01 | VPC Architecture Setup | ![01_vpc_architecture_setup](screenshots/01_vpc_architecture_setup.png) | Complete VPC configuration with subnets, internet gateway, and routing tables. |
+| 02 | Subnets & Routing | ![02_vpc_subnets_routing](screenshots/02_vpc_subnets_routing.png) | Public/private subnet configuration and route tables for multi-tier architecture. |
+| 03 | Security Groups & Network ACLs | ![03_security_groups_network_acls](screenshots/03_security_groups_network_acls.png) | Security group rules and Network ACLs controlling inbound/outbound traffic. |
+| 04 | IAM Roles & Policies Setup | ![04_iam_roles_policies_setup](screenshots/04_iam_roles_policies_setup.png) | Least-privilege IAM roles and policies applied for secure cloud operations. |
+| 05 | Git Branch-Merge Workflow | ![05_git_branch_merge_workflow](screenshots/05_git_branch_merge_workflow.png) | Professional Git workflow with feature branches, pull requests, and code reviews. |
+| 06 | GuardDuty Dashboard Overview | ![07_guardduty_dashboard_overview](screenshots/07_guardduty_dashboard_overview.png) | Monitoring unauthorized API calls and suspicious activity via GuardDuty. |
+| 07 | S3 Bucket Configuration | ![08_s3_bucket_configuration](screenshots/08_s3_bucket_configuration.png) | Policies, versioning, encryption, and access control settings for S3 buckets. |
+| 08 | CloudWatch Monitoring Dashboard | ![09_cloudwatch_monitoring_dashboard](screenshots/09_cloudwatch_monitoring_dashboard.png) | Metrics, alarms, and monitoring dashboards for service health.
 
 ## 💡 What This Actually Is
 
