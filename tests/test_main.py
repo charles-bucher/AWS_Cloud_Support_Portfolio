@@ -1,3 +1,7 @@
+"""
+Brief: AWS Cloud Support Simulation Script
+Purpose: Hands-on troubleshooting and RCA practice
+"""
 import pytest
 from unittest.mock import Mock, patch
 import boto3

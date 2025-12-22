@@ -1,0 +1,34 @@
+import os
+
+# Path to your screenshots folder
+screenshots_path = r"C:\Users\buche\docs\Desktop\REPOS\AWS_Cloud_Support_Sim\screenshots"
+
+# Desired story-driven filenames
+story_filenames = [
+    "00_cloud_support_lab_verified.png",
+    "01_vpc_setup_architecture.png",
+    "02_vpc_subnets_routing.png",
+    "03_security_groups_network_acls.png",
+    "04_git_branch_merge_workflow.png",
+    "05_guardduty_security_alerts.png",
+    "06_s3_bucket_setup.png",
+    "07_iam_roles_policies.png",
+    "08_aws_guardduty.png",
+    "09_cloudwatch_validation_dashboard.png"
+]
+
+# List all PNG files in the folder (case-insensitive)
+files = [f for f in os.listdir(screenshots_path) if f.lower().endswith(".png")]
+files.sort()  # Sort alphabetically to maintain order
+
+# Rename files according to story sequence
+for i, new_name in enumerate(story_filenames):
+    if i >= len(files):
+        print(f"Warning: Not enough files to rename for {new_name}")
+        continue
+    old_path = os.path.join(screenshots_path, files[i])
+    new_path = os.path.join(screenshots_path, new_name)
+    os.rename(old_path, new_path)
+    print(f"Renamed: {files[i]} -> {new_name}")
+
+print("All screenshots have been renamed to the story-driven sequence!")
