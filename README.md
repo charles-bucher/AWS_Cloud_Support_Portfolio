@@ -1,112 +1,80 @@
-AWS Cloud Support Simulation Labs
+# Charles Bucher Cloud Support Sim
 
-Hands-on AWS Cloud Support labs for troubleshooting EC2, S3, Lambda, IAM, GuardDuty, Security Groups, and VPC scenarios using real cloud support workflows. Focused on logs, metrics, incident response, remediation, and prevention.
+![Repo Validator](https://img.shields.io/badge/Validation-Passed-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Terraform](https://img.shields.io/badge/Terraform-1.5.9-blue)
 
-TL;DR
+Hands-on AWS Cloud Support labs for troubleshooting EC2, S3, Lambda, and GuardDuty incidents using real cloud support workflows. Focused on logs, metrics, incident response, remediation, and prevention.
 
-Practice AWS Cloud Support workflows in a realistic lab environment.
+---
 
-Includes 7 core scenarios with prebuilt infrastructure and step-by-step guidance.
+## TL;DR
+This repository is a comprehensive AWS Cloud Support learning and portfolio project. It contains lab simulations, automation scripts, and documentation to demonstrate troubleshooting, monitoring, and remediation of cloud incidents.
 
-Focus on troubleshooting, automation, and root cause analysis.
+---
 
-Ideal for building a cloud support portfolio and preparing for AWS Cloud Support or CloudOps roles.
+## Quick Start
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/charles-bucher/charles-bucher.git
+   cd charles-bucher
+Set up a Python virtual environment:
 
-Quick Start
-
-Clone the repo:
-
-git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
-cd AWS_Cloud_Support_Sim
-
-
-Optional: Create a Python virtual environment and install dependencies:
-
+bash
+Copy code
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+.\venv\Scripts\activate   # Windows
+Install dependencies:
+
+bash
+Copy code
 pip install -r requirements.txt
+Run validation or lab scripts:
 
-
-Explore the scenario folders:
-
-scenarios/
-├─ 01_cloudwatch-monitoring-scenario
-├─ 02_ec2-troubleshoot-scenario
-├─ 03_guardduty-automation-scenario
-├─ 04_iam-role-policy-scenario
-├─ 05_s3-iam-access-scenario
-├─ 06_security-groups-nacl-scenario
-├─ 07_vpc-architecture-scenario
-
-
-Follow the README in each scenario for step-by-step instructions.
-
+bash
+Copy code
+python validate_repos.py
 Incident Scenarios
+This repo includes labs covering:
+
 ID	Incident	Services	Difficulty	Status
-01	EC2 connectivity issues	EC2, CloudWatch	Medium	Active
-02	S3 bucket misconfiguration	S3, IAM	Medium	Active
-03	GuardDuty alert automation	GuardDuty, Lambda	Hard	Active
-04	IAM role & policy misconfig	IAM	Medium	Active
-05	S3 bucket IAM access issues	S3, IAM	Medium	Active
-06	Security groups & NACL misconfig	EC2, VPC	Medium	Active
-07	VPC architecture verification	VPC, Subnets	Medium	Active
-
-Each scenario contains: prebuilt infrastructure, step-by-step instructions, screenshots, and remediation steps.
-
-Skills You’ll Practice
-
-AWS EC2, S3, Lambda, IAM, GuardDuty, VPC
-
-CloudWatch metrics & dashboards
-
-Incident response & troubleshooting workflows
-
-Root cause analysis
-
-Terraform & infrastructure as code (IaC)
-
-Python automation for AWS
-
-Cloud support documentation
-
-Screenshots
-
-00_lab_environment_verified.png
-
-01_vpc_architecture_setup.png
-
-02_vpc_subnets_routing.png
-
-03_security_groups_network_acls.png
-
-04_iam_roles_policies_setup.png
-
-06_s3_bucket_setup.png
-
-07_guardduty_dashboard_overview.png
-
-08_s3_bucket_configuration.png
-
-09_cloudwatch_monitoring_dashboard.png
-
-All screenshots are included in the screenshots/ folder.
+001	EC2 connectivity issue	EC2, VPC	Easy	Complete
+002	Public S3 bucket exposure	S3, IAM	Medium	Complete
+003	Lambda timeout automation	Lambda, CloudWatch	Medium	Complete
+004	IAM role & policy misconfiguration	IAM, CloudTrail	Medium	Complete
+005	Security groups & NACL misconfig	EC2, VPC	Medium	Complete
+006	CloudWatch monitoring alerts	CloudWatch, SNS	Medium	Complete
 
 Installation
+Make sure AWS CLI is configured with your credentials.
 
-Clone the repo.
+Terraform should be installed for infrastructure deployments.
 
-Install dependencies (pip install -r requirements.txt) if using Python scripts.
+Python 3.14+ is required to run validation and lab scripts.
 
-Review scenario README.md files for Terraform setup and execution instructions.
+Follow each scenario README for detailed deployment and remediation steps.
+
+Skills
+AWS Cloud Support (EC2, S3, Lambda, GuardDuty)
+
+AWS Cloud Monitoring & Logging
+
+Incident Response & Remediation
+
+Python Automation
+
+Terraform Infrastructure as Code (IaC)
+
+Root Cause Analysis & Troubleshooting
+
+Portfolio & Documentation Best Practices
 
 License
-
-This project is licensed under the MIT License — see LICENSE
- for details.
+This project is licensed under the MIT License. See LICENSE for details.
 
 Contact
+LinkedIn: Charles-bucher-cloud
 
-Charles Bucher
-GitHub
- | LinkedIn
+GitHub: charles-bucher
+
