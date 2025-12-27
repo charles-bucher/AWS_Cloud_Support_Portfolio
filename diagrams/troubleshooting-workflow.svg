@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #232F3E; }
+      .step-num { font-family: Arial, sans-serif; font-size: 36px; font-weight: bold; fill: white; }
+      .step-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: white; }
+      .step-text { font-family: Arial, sans-serif; font-size: 13px; fill: white; }
+      .tool-text { font-family: Arial, sans-serif; font-size: 12px; fill: #232F3E; }
+      
+      .box { stroke-width: 2; rx: 8; }
+      .arrow { stroke: #FF9900; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      
+      .step1 { fill: #3498DB; stroke: #2980B9; }
+      .step2 { fill: #E74C3C; stroke: #C0392B; }
+      .step3 { fill: #F39C12; stroke: #D68910; }
+      .step4 { fill: #2ECC71; stroke: #27AE60; }
+      .step5 { fill: #9B59B6; stroke: #8E44AD; }
+    </style>
+    
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF9900" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#F5F7FA"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" class="title">My Cloud Troubleshooting Workflow</text>
+  <text x="500" y="58" text-anchor="middle" class="tool-text" font-size="14">Applied to All 7 Scenarios in AWS Cloud Support Sim</text>
+  
+  <!-- Step 1: Deploy Infrastructure -->
+  <rect x="50" y="90" width="420" height="100" class="box step1"/>
+  <text x="75" y="130" class="step-num">1</text>
+  <text x="260" y="115" text-anchor="middle" class="step-title">Deploy Lab Infrastructure</text>
+  <line x1="150" y1="125" x2="460" y2="125" stroke="white" stroke-width="1"/>
+  <text x="260" y="145" text-anchor="middle" class="step-text">Run: terraform init && terraform apply</text>
+  <text x="260" y="165" text-anchor="middle" class="step-text">Create AWS resources (EC2, S3, Lambda, VPC, etc.)</text>
+  <text x="260" y="182" text-anchor="middle" class="step-text">Deploy monitoring (CloudWatch, CloudTrail)</text>
+  
+  <!-- Step 2: Trigger Incident -->
+  <rect x="530" y="90" width="420" height="100" class="box step2"/>
+  <text x="555" y="130" class="step-num">2</text>
+  <text x="740" y="115" text-anchor="middle" class="step-title">Simulate Real Issue</text>
+  <line x1="630" y1="125" x2="940" y2="125" stroke="white" stroke="width="1"/>
+  <text x="740" y="145" text-anchor="middle" class="step-text">Break something intentionally (misconfigure service)</text>
+  <text x="740" y="165" text-anchor="middle" class="step-text">Examples: Close port 22, make S3 public, wrong IAM</text>
+  <text x="740" y="182" text-anchor="middle" class="step-text">This mimics real production incidents</text>
+  
+  <!-- Arrow -->
+  <path d="M 260 190 L 260 230" class="arrow"/>
+  
+  <!-- Step 3: Detect & Investigate -->
+  <rect x="50" y="240" width="420" height="120" class="box step3"/>
+  <text x="75" y="285" class="step-num">3</text>
+  <text x="260" y="265" text-anchor="middle" class="step-title">Detect & Investigate</text>
+  <line x1="150" y1="275" x2="460" y2="275" stroke="white" stroke-width="1"/>
+  <text x="260" y="295" text-anchor="middle" class="step-text">Check CloudWatch Logs for errors</text>
+  <text x="260" y="312" text-anchor="middle" class="step-text">Review CloudTrail for API calls</text>
+  <text x="260" y="329" text-anchor="middle" class="step-text">Analyze VPC Flow Logs for network issues</text>
+  <text x="260" y="346" text-anchor="middle" class="step-text">Identify root cause of the problem</text>
+  
+  <!-- Arrow -->
+  <path d="M 470 300 L 530 300" class="arrow"/>
+  
+  <!-- Step 4: Implement Fix -->
+  <rect x="530" y="240" width="420" height="120" class="box step4"/>
+  <text x="555" y="285" class="step-num">4</text>
+  <text x="740" y="265" text-anchor="middle" class="step-title">Remediate Issue</text>
+  <line x1="630" y1="275" x2="940" y2="275" stroke="white" stroke-width="1"/>
+  <text x="740" y="295" text-anchor="middle" class="step-text">Fix the misconfiguration</text>
+  <text x="740" y="312" text-anchor="middle" class="step-text">Update security group, IAM policy, etc.</text>
+  <text x="740" y="329" text-anchor="middle" class="step-text">Test the solution</text>
+  <text x="740" y="346" text-anchor="middle" class="step-text">Verify service is working again</text>
+  
+  <!-- Arrow -->
+  <path d="M 740 360 L 740 390" class="arrow"/>
+  
+  <!-- Step 5: Document & Learn -->
+  <rect x="330" y="400" width="340" height="100" class="box step5"/>
+  <text x="355" y="440" class="step-num">5</text>
+  <text x="500" y="425" text-anchor="middle" class="step-title">Document Everything</text>
+  <line x1="430" y1="435" x2="660" y2="435" stroke="white" stroke-width="1"/>
+  <text x="500" y="455" text-anchor="middle" class="step-text">Write detailed README for scenario</text>
+  <text x="500" y="472" text-anchor="middle" class="step-text">Explain what went wrong and how I fixed it</text>
+  <text x="500" y="489" text-anchor="middle" class="step-text">Add screenshots and code examples</text>
+  
+  <!-- Tools Section -->
+  <rect x="50" y="530" width="900" height="150" fill="white" stroke="#232F3E" stroke-width="2" rx="10"/>
+  <text x="500" y="560" text-anchor="middle" class="title" style="font-size: 18px">🛠️ Tools I Use Every Day</text>
+  
+  <g id="tool1">
+    <rect x="80" y="580" width="160" height="80" class="box" fill="#146EB4" stroke="#0F5A91"/>
+    <text x="160" y="610" text-anchor="middle" class="step-title">AWS Console</text>
+    <text x="160" y="630" text-anchor="middle" class="step-text">Navigate services</text>
+    <text x="160" y="647" text-anchor="middle" class="step-text">Check resources</text>
+  </g>
+  
+  <g id="tool2">
+    <rect x="260" y="580" width="160" height="80" class="box" fill="#3498DB" stroke="#2980B9"/>
+    <text x="340" y="610" text-anchor="middle" class="step-title">CloudWatch</text>
+    <text x="340" y="630" text-anchor="middle" class="step-text">Read logs</text>
+    <text x="340" y="647" text-anchor="middle" class="step-text">Check metrics</text>
+  </g>
+  
+  <g id="tool3">
+    <rect x="440" y="580" width="160" height="80" class="box" fill="#569A31" stroke="#3F7324"/>
+    <text x="520" y="610" text-anchor="middle" class="step-title">Terraform</text>
+    <text x="520" y="630" text-anchor="middle" class="step-text">Deploy infra</text>
+    <text x="520" y="647" text-anchor="middle" class="step-text">Manage state</text>
+  </g>
+  
+  <g id="tool4">
+    <rect x="620" y="580" width="160" height="80" class="box" fill="#F39C12" stroke="#D68910"/>
+    <text x="700" y="610" text-anchor="middle" class="step-title">Python</text>
+    <text x="700" y="630" text-anchor="middle" class="step-text">Automation</text>
+    <text x="700" y="647" text-anchor="middle" class="step-text">Testing</text>
+  </g>
+  
+  <g id="tool5">
+    <rect x="800" y="580" width="130" height="80" class="box" fill="#DD344C" stroke="#A32D3E"/>
+    <text x="865" y="610" text-anchor="middle" class="step-title">Git/GitHub</text>
+    <text x="865" y="630" text-anchor="middle" class="step-text">Version</text>
+    <text x="865" y="647" text-anchor="middle" class="step-text">control</text>
+  </g>
+</svg>

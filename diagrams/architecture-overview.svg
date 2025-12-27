@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 26px; font-weight: bold; fill: #232F3E; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; fill: #545B64; }
+      .section-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: white; }
+      .label { font-family: Arial, sans-serif; font-size: 13px; fill: #232F3E; }
+      .label-white { font-family: Arial, sans-serif; font-size: 12px; fill: white; }
+      .small-text { font-family: Arial, sans-serif; font-size: 11px; fill: white; }
+      
+      .box { stroke-width: 2; rx: 8; }
+      .arrow { stroke: #FF9900; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      
+      .orange { fill: #FF9900; stroke: #CC7A00; }
+      .blue { fill: #146EB4; stroke: #0F5A91; }
+      .green { fill: #569A31; stroke: #3F7324; }
+      .purple { fill: #8C4FFF; stroke: #6B3ACC; }
+      .red { fill: #DD344C; stroke: #A32D3E; }
+      .yellow { fill: #F39C12; stroke: #D68910; }
+      .teal { fill: #16A085; stroke: #138D75; }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF9900" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#F5F7FA"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" text-anchor="middle" class="title">AWS Cloud Support Simulator - Architecture</text>
+  <text x="600" y="55" text-anchor="middle" class="subtitle">7 Real-World Troubleshooting Scenarios for Entry-Level Cloud Engineers</text>
+  
+  <!-- ===== DEV ENVIRONMENT ===== -->
+  <rect x="40" y="80" width="1120" height="100" class="box blue" fill-opacity="0.9"/>
+  <text x="600" y="105" text-anchor="middle" class="section-title">💻 My Development Environment</text>
+  
+  <rect x="80" y="120" width="220" height="45" class="box" fill="white" stroke="#146EB4"/>
+  <text x="190" y="140" text-anchor="middle" class="label">🐍 Python 3.14+</text>
+  <text x="190" y="157" text-anchor="middle" class="subtitle">Automation Scripts</text>
+  
+  <rect x="330" y="120" width="220" height="45" class="box" fill="white" stroke="#146EB4"/>
+  <text x="440" y="140" text-anchor="middle" class="label">🏗️ Terraform</text>
+  <text x="440" y="157" text-anchor="middle" class="subtitle">Infrastructure as Code</text>
+  
+  <rect x="580" y="120" width="220" height="45" class="box" fill="white" stroke="#146EB4"/>
+  <text x="690" y="140" text-anchor="middle" class="label">⚙️ AWS CLI</text>
+  <text x="690" y="157" text-anchor="middle" class="subtitle">Command Line Tools</text>
+  
+  <rect x="830" y="120" width="220" height="45" class="box" fill="white" stroke="#146EB4"/>
+  <text x="940" y="140" text-anchor="middle" class="label">📁 GitHub</text>
+  <text x="940" y="157" text-anchor="middle" class="subtitle">Version Control</text>
+  
+  <!-- Arrow down -->
+  <path d="M 600 180 L 600 210" class="arrow"/>
+  
+  <!-- ===== AWS CLOUD BORDER ===== -->
+  <rect x="40" y="220" width="1120" height="530" class="box" fill="white" stroke="#FF9900" stroke-width="3"/>
+  <text x="600" y="245" text-anchor="middle" class="section-title" style="fill: #FF9900">☁️ AWS Cloud - 7 Hands-On Incident Scenarios</text>
+  
+  <!-- ===== ROW 1: SCENARIOS 1-4 ===== -->
+  <!-- Scenario 001: EC2 -->
+  <rect x="70" y="270" width="250" height="110" class="box orange" fill-opacity="0.9"/>
+  <text x="195" y="292" text-anchor="middle" class="section-title">001: EC2 Connectivity</text>
+  <line x1="90" y1="302" x2="300" y2="302" stroke="white" stroke-width="1"/>
+  <text x="195" y="320" text-anchor="middle" class="label-white">SSH Connection Failed</text>
+  <text x="195" y="337" text-anchor="middle" class="small-text">• Security Groups</text>
+  <text x="195" y="352" text-anchor="middle" class="small-text">• VPC Routing</text>
+  <text x="195" y="367" text-anchor="middle" class="small-text">• Network ACLs</text>
+  
+  <!-- Scenario 002: S3 -->
+  <rect x="340" y="270" width="250" height="110" class="box green" fill-opacity="0.9"/>
+  <text x="465" y="292" text-anchor="middle" class="section-title">002: S3 Public Bucket</text>
+  <line x1="360" y1="302" x2="570" y2="302" stroke="white" stroke-width="1"/>
+  <text x="465" y="320" text-anchor="middle" class="label-white">Data Exposure Risk</text>
+  <text x="465" y="337" text-anchor="middle" class="small-text">• Bucket Policies</text>
+  <text x="465" y="352" text-anchor="middle" class="small-text">• IAM Permissions</text>
+  <text x="465" y="367" text-anchor="middle" class="small-text">• CloudTrail Audit</text>
+  
+  <!-- Scenario 003: Lambda -->
+  <rect x="610" y="270" width="250" height="110" class="box orange" fill-opacity="0.9"/>
+  <text x="735" y="292" text-anchor="middle" class="section-title">003: Lambda Timeout</text>
+  <line x1="630" y1="302" x2="840" y2="302" stroke="white" stroke-width="1"/>
+  <text x="735" y="320" text-anchor="middle" class="label-white">Function Performance</text>
+  <text x="735" y="337" text-anchor="middle" class="small-text">• Memory Tuning</text>
+  <text x="735" y="352" text-anchor="middle" class="small-text">• CloudWatch Logs</text>
+  <text x="735" y="367" text-anchor="middle" class="small-text">• Optimization</text>
+  
+  <!-- Scenario 004: IAM -->
+  <rect x="880" y="270" width="250" height="110" class="box red" fill-opacity="0.9"/>
+  <text x="1005" y="292" text-anchor="middle" class="section-title">004: IAM Misconfiguration</text>
+  <line x1="900" y1="302" x2="1110" y2="302" stroke="white" stroke-width="1"/>
+  <text x="1005" y="320" text-anchor="middle" class="label-white">Access Denied Errors</text>
+  <text x="1005" y="337" text-anchor="middle" class="small-text">• Policy Debugging</text>
+  <text x="1005" y="352" text-anchor="middle" class="small-text">• Role Assumption</text>
+  <text x="1005" y="367" text-anchor="middle" class="small-text">• Least Privilege</text>
+  
+  <!-- ===== ROW 2: SCENARIOS 5-7 ===== -->
+  <!-- Scenario 005: Network Security -->
+  <rect x="70" y="400" width="250" height="110" class="box purple" fill-opacity="0.9"/>
+  <text x="195" y="422" text-anchor="middle" class="section-title">005: Network Security</text>
+  <line x1="90" y1="432" x2="300" y2="432" stroke="white" stroke-width="1"/>
+  <text x="195" y="450" text-anchor="middle" class="label-white">Traffic Blocked</text>
+  <text x="195" y="467" text-anchor="middle" class="small-text">• Security Groups</text>
+  <text x="195" y="482" text-anchor="middle" class="small-text">• NACLs Analysis</text>
+  <text x="195" y="497" text-anchor="middle" class="small-text">• VPC Flow Logs</text>
+  
+  <!-- Scenario 006: CloudWatch -->
+  <rect x="340" y="400" width="250" height="110" class="box yellow" fill-opacity="0.9"/>
+  <text x="465" y="422" text-anchor="middle" class="section-title">006: CloudWatch Alerts</text>
+  <line x1="360" y1="432" x2="570" y2="432" stroke="white" stroke-width="1"/>
+  <text x="465" y="450" text-anchor="middle" class="label-white">Monitoring Issues</text>
+  <text x="465" y="467" text-anchor="middle" class="small-text">• Alarm Configuration</text>
+  <text x="465" y="482" text-anchor="middle" class="small-text">• SNS Topics</text>
+  <text x="465" y="497" text-anchor="middle" class="small-text">• Metric Filters</text>
+  
+  <!-- Scenario 007: VPC Architecture -->
+  <rect x="610" y="400" width="250" height="110" class="box teal" fill-opacity="0.9"/>
+  <text x="735" y="422" text-anchor="middle" class="section-title">007: VPC Architecture</text>
+  <line x1="630" y1="432" x2="840" y2="432" stroke="white" stroke-width="1"/>
+  <text x="735" y="450" text-anchor="middle" class="label-white">Multi-Tier Design</text>
+  <text x="735" y="467" text-anchor="middle" class="small-text">• Subnets & Routes</text>
+  <text x="735" y="482" text-anchor="middle" class="small-text">• NAT Gateway</text>
+  <text x="735" y="497" text-anchor="middle" class="small-text">• Internet Gateway</text>
+  
+  <!-- AWS Services Box -->
+  <rect x="880" y="400" width="250" height="110" class="box" fill="#F8F9FA" stroke="#232F3E"/>
+  <text x="1005" y="422" text-anchor="middle" class="label" font-weight="bold">🔧 AWS Services</text>
+  <line x1="900" y1="432" x2="1110" y2="432" stroke="#232F3E" stroke-width="1"/>
+  
+  <text x="935" y="455" text-anchor="middle" class="subtitle">EC2</text>
+  <text x="985" y="455" text-anchor="middle" class="subtitle">S3</text>
+  <text x="1035" y="455" text-anchor="middle" class="subtitle">Lambda</text>
+  <text x="1085" y="455" text-anchor="middle" class="subtitle">VPC</text>
+  
+  <text x="935" y="477" text-anchor="middle" class="subtitle">IAM</text>
+  <text x="985" y="477" text-anchor="middle" class="subtitle">CloudWatch</text>
+  <text x="1035" y="477" text-anchor="middle" class="subtitle">CloudTrail</text>
+  <text x="1085" y="477" text-anchor="middle" class="subtitle">SNS</text>
+  
+  <text x="960" y="499" text-anchor="middle" class="subtitle">GuardDuty</text>
+  <text x="1050" y="499" text-anchor="middle" class="subtitle">EventBridge</text>
+  
+  <!-- ===== OBSERVABILITY LAYER ===== -->
+  <rect x="70" y="530" width="1060" height="90" class="box purple" fill-opacity="0.15" stroke="#8C4FFF"/>
+  <text x="600" y="555" text-anchor="middle" class="label" font-weight="bold">📊 Monitoring & Logging Stack I Used</text>
+  
+  <rect x="120" y="570" width="210" height="35" class="box purple" fill-opacity="0.9"/>
+  <text x="225" y="593" text-anchor="middle" class="label-white">CloudWatch Logs & Metrics</text>
+  
+  <rect x="360" y="570" width="210" height="35" class="box purple" fill-opacity="0.9"/>
+  <text x="465" y="593" text-anchor="middle" class="label-white">CloudTrail API Events</text>
+  
+  <rect x="600" y="570" width="210" height="35" class="box purple" fill-opacity="0.9"/>
+  <text x="705" y="593" text-anchor="middle" class="label-white">VPC Flow Logs</text>
+  
+  <rect x="840" y="570" width="210" height="35" class="box purple" fill-opacity="0.9"/>
+  <text x="945" y="593" text-anchor="middle" class="label-white">SNS Notifications</text>
+  
+  <!-- ===== AUTOMATION LAYER ===== -->
+  <rect x="70" y="640" width="1060" height="50" class="box blue" fill-opacity="0.15" stroke="#146EB4"/>
+  <text x="600" y="670" text-anchor="middle" class="label" font-weight="bold">🤖 Automation: validate_repos.py | incident_simulator.py | pytest tests/ | main.py</text>
+  
+  <!-- ===== SKILLS FOOTER ===== -->
+  <rect x="40" y="770" width="1120" height="110" class="box" fill="white" stroke="#232F3E" stroke-width="2"/>
+  <text x="600" y="798" text-anchor="middle" class="label" font-size="18" font-weight="bold">✨ Entry-Level Cloud Engineer Skills Demonstrated</text>
+  
+  <text x="150" y="825" text-anchor="middle" class="label">AWS Troubleshooting</text>
+  <text x="150" y="842" text-anchor="middle" class="subtitle">Multi-service debugging</text>
+  <text x="150" y="858" text-anchor="middle" class="subtitle">Log analysis</text>
+  
+  <text x="340" y="825" text-anchor="middle" class="label">Infrastructure as Code</text>
+  <text x="340" y="842" text-anchor="middle" class="subtitle">Terraform deployments</text>
+  <text x="340" y="858" text-anchor="middle" class="subtitle">State management</text>
+  
+  <text x="530" y="825" text-anchor="middle" class="label">Python Automation</text>
+  <text x="530" y="842" text-anchor="middle" class="subtitle">Validation scripts</text>
+  <text x="530" y="858" text-anchor="middle" class="subtitle">Testing framework</text>
+  
+  <text x="720" y="825" text-anchor="middle" class="label">Incident Response</text>
+  <text x="720" y="842" text-anchor="middle" class="subtitle">Root cause analysis</text>
+  <text x="720" y="858" text-anchor="middle" class="subtitle">Remediation</text>
+  
+  <text x="910" y="825" text-anchor="middle" class="label">Cloud Security</text>
+  <text x="910" y="842" text-anchor="middle" class="subtitle">IAM policies</text>
+  <text x="910" y="858" text-anchor="middle" class="subtitle">Network security</text>
+  
+  <text x="1050" y="825" text-anchor="middle" class="label">Documentation</text>
+  <text x="1050" y="842" text-anchor="middle" class="subtitle">Technical writing</text>
+  <text x="1050" y="858" text-anchor="middle" class="subtitle">Runbooks</text>
+</svg>
