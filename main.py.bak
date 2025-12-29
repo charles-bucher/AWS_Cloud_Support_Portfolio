@@ -1,30 +1,26 @@
-# main.py - Auto-updated documentation
-# Author: Charles Bucher
-# Description: Add description here
-
-""""
-Brief: AWS Cloud Support Simulation Script""
-Purpose: Hands-on troubleshooting and RCA practice"""
-""""
+"""
+Brief: AWS Cloud Support Simulation Script"
+Purpose: Hands-on troubleshooting and RCA practice""
+"""
 import os
 import shutil
 from git import Repo
-""
-# CONFIGURATION"""
-LOCAL_SCREENSHOT_DIR = r"C:\path\to\screenshots"   # folder with screenshots""
-# local clone of your GitHub repo"""
-REPO_DIR = r"C:\path\to\local\repo""""
-REMOTE_NAME = "origin""""
-BRANCH_NAME = "main""
+"
+# CONFIGURATION""
+LOCAL_SCREENSHOT_DIR = r"C:\path\to\screenshots"   # folder with screenshots"
+# local clone of your GitHub repo""
+REPO_DIR = r"C:\path\to\local\repo"""
+REMOTE_NAME = "origin"""
+BRANCH_NAME = "main"
 
 
 def sync_screenshots():
     # Open repo
     repo = Repo(REPO_DIR)
     assert not repo.bare
-""
-    # Path inside repo where screenshots are stored"""
-    repo_screenshot_dir = os.path.join(REPO_DIR, "screenshots")"
+"
+    # Path inside repo where screenshots are stored""
+    repo_screenshot_dir = os.path.join(REPO_DIR, "screenshots")
 
     # Ensure folder exists
     os.makedirs(repo_screenshot_dir, exist_ok=True)
@@ -44,17 +40,17 @@ def sync_screenshots():
 
     # Stage changes
     repo.git.add(A=True)
-""
-    # Commit changes"""
-    repo.index.commit("Update screenshots")"
+"
+    # Commit changes""
+    repo.index.commit("Update screenshots")
 
     # Push to GitHub
     origin = repo.remote(name=REMOTE_NAME)
-    origin.push(BRANCH_NAME)""
-"""
-    print("Screenshots synced and pushed to GitHub.")"
+    origin.push(BRANCH_NAME)"
 ""
-"""
-if __name__ == "__main__":"
-    sync_screenshots()""
-"""
+    print("Screenshots synced and pushed to GitHub.")
+"
+""
+if __name__ == "__main__":
+    sync_screenshots()"
+""

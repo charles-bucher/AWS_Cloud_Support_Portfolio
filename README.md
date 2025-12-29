@@ -760,3 +760,43 @@ Made with 🔧 for cloud support engineers by cloud support engineers
 ## 📋 Keywords for ATS/Search
 
 AWS cloud support, incident response, troubleshooting AWS, CloudWatch Logs, root cause analysis, AWS support engineer, cloud operations, EC2 troubleshooting, Lambda debugging, S3 security, GuardDuty alerts, VPC networking, security incident response, performance troubleshooting, AWS monitoring, observability, CloudTrail forensics, technical support engineer, site reliability engineering, production debugging, AWS certification prep, hands-on AWS labs, cloud support portfolio, AWS troubleshooting methodology, incident management, problem resolution, AWS best practices, cloud engineer entry level
+## Deployment
+Content to be added.
+
+## Tech Stack
+Content to be added.
+
+## Setup Instructions
+1. Clone the repo
+2. Install dependencies (`pip install -r requirements.txt` or as needed)
+3. Configure environment variables if required
+4. Run scripts or tests
+
+## Usage Examples
+```bash
+python script_name.py --example-arg value
+```
+Replace with actual usage commands for this repo.
+
+## Screenshots
+Include screenshots of outputs, dashboards, or any UI here. Example:
+![Example](path_to_screenshot.png)
+
+## Contact
+Reach me at your-email@example.com or GitHub: https://github.com/Charles-Bucher
+
+
+## Overview
+_TODO: Describe this section._
+
+
+## Features
+_TODO: Describe this section._
+
+
+## Skills Demonstrated
+_TODO: Describe this section._
+
+
+## License
+_TODO: Describe this section._

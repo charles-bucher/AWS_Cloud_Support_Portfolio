@@ -5,10 +5,10 @@ def run_validation(repo_path):
     # ... some code before ...
 
     # Original line 58 had an f-string with no placeholders
-    # print(f"Validation complete.")  # ❌"
+    # print(f"Validation complete.")  # ❌
 
-    # Fixed:""
-    print("Validation complete.")  # ✅"
+    # Fixed:"
+    print("Validation complete.")  # ✅
 
     # ... rest of the code ...
-""
+"

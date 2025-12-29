@@ -5,7 +5,7 @@ def some_utility_function(arg1, arg2):
     # ... code ...
 
     # Example of corrected code around line 126
-    some_list = ["item1", "item2", "item3"]  # ensure commas between items"
+    some_list = ["item1", "item2", "item3"]  # ensure commas between items
 
     # Original problematic line might have been like:
 # result = do_something(arg1 arg2)  # ❌ missing comma
@@ -15,4 +15,4 @@ def some_utility_function(arg1, arg2):
 result = do_something(arg1, arg2)  # ✅
 
 # ... rest of the code ...
-""
+"
