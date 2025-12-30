@@ -1,56 +1,90 @@
-# AWS Cloud Support Simulator
+# AWS Cloud Support Simulator 🔧
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900.svg)](https://aws.amazon.com/)
-[![Python](https://img.shields.io/badge/Python-3.9+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC.svg)](https://www.terraform.io/)
-[![Cloud Support](https://img.shields.io/badge/Type-Incident%20Response-critical.svg)]()
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![AWS](https://img.shields.io/badge/AWS-Cloud%20Support-orange)](https://aws.amazon.com/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
+[![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)](https://www.terraform.io/)
+[![CloudWatch](https://img.shields.io/badge/CloudWatch-Monitoring-orange)](https://aws.amazon.com/cloudwatch/)
 
 > **Hands-on AWS Cloud Support labs for troubleshooting real production incidents**
 
 Practice responding to EC2, S3, Lambda, and GuardDuty incidents using actual cloud support workflows—investigation, root cause analysis, remediation, and prevention.
 
----
+![Lab Environment Verified](screenshots/00_lab_environment_verified.png)
 
-## 🎯 TL;DR
+## Overview
 
-**What:** 7 hands-on incident response scenarios simulating real AWS Cloud Support cases. You investigate production issues, analyze logs and metrics, identify root causes, and implement fixes.
+**AWS Cloud Support Simulator** provides 7 production-grade incident response scenarios that simulate real AWS Cloud Support cases. You'll investigate production issues, analyze logs and metrics, identify root causes, and implement fixes—just like working in an actual cloud support role.
 
-**Why:** Most AWS tutorials teach how to build things. This teaches **troubleshooting skills** that cloud support engineers actually use—reading CloudWatch Logs, investigating security incidents, and fixing production issues under pressure.
+**The Problem with Traditional AWS Tutorials:**  
+Most courses teach you how to *build* perfect infrastructure. This teaches you how to *fix* broken production systems—the skills cloud support engineers actually use every day.
 
-**Skills:** Incident response • CloudWatch Logs analysis • Root cause analysis • EC2 troubleshooting • S3 security • Lambda debugging • GuardDuty threat detection • Problem remediation
+**What You'll Learn:**
+- Systematic incident response methodology
+- CloudWatch Logs and Metrics analysis
+- VPC networking troubleshooting
+- Security incident investigation
+- Lambda performance debugging
+- Root cause analysis techniques
 
-**Time Investment:** 2-3 hours per incident • Complete all 7 scenarios in 2 weekends
-
-**Cost:** AWS Free Tier (under $5 total)
-
-**Best For:** Cloud Support Engineer • AWS Support • Technical Support • Cloud Operations • Site Reliability Engineer (SRE)
-
----
-
-## 📊 Project Overview
-
-| Metric | Value |
-|--------|-------|
-| **Incident Scenarios** | 7 Production-Grade Cases |
-| **AWS Services** | EC2, S3, Lambda, GuardDuty, CloudWatch, IAM |
-| **Response Skills** | Investigation, Analysis, Remediation, Prevention |
-| **Infrastructure** | 100% Terraform |
-| **Documentation** | Full runbooks and playbooks |
+**Time Investment:** 20-25 hours total (2-3 hours per incident)  
+**Cost:** < $5 using AWS Free Tier  
+**Best For:** Cloud Support Engineer, AWS Support, SRE, Cloud Operations roles
 
 ---
 
-## 🚨 The 7 Incident Scenarios
+## Architecture
+
+### Lab Environment
+
+![VPC Architecture](screenshots/01_vpc_architecture_setup.png)
+
+*Fully configured VPC with public/private subnets, NAT Gateway, Internet Gateway, and security layers for realistic incident scenarios*
+
+### Network Security Configuration
+
+![Security Groups and NACLs](screenshots/03_security_groups_network_acls.png)
+
+*Security groups and Network ACLs configured to simulate real-world networking issues and security controls*
+
+### Repository Structure
+
+```
+AWS_Cloud_Support_Sim/
+│
+├── scenarios/                  # The 7 incident scenarios
+│   ├── 001-ec2-connectivity/  # VPC networking troubleshooting
+│   │   ├── terraform/         # Infrastructure deployment
+│   │   ├── scripts/           # Investigation helpers
+│   │   ├── screenshots/       # Visual guides
+│   │   └── README.md          # Incident brief
+│   │
+│   ├── 002-s3-security/       # S3 security incident
+│   ├── 003-lambda-timeout/    # Lambda performance
+│   ├── 004-guardduty-alert/   # Security threat detection
+│   ├── 005-ec2-high-cpu/      # Performance troubleshooting
+│   ├── 006-lambda-dynamodb/   # Database throttling
+│   └── 007-multi-service/     # Complex multi-service outage
+│
+├── scripts/                   # Validation and utilities
+├── src/                       # Core automation
+├── tests/                     # Automated validation
+├── diagrams/                  # Architecture diagrams
+├── docs/                      # Playbooks and guides
+└── requirements.txt           # Python dependencies
+```
+
+---
+
+## Features
 
 ### 🔴 Scenario 001: EC2 Instance Connectivity Issue
 
 **Incident Report:**
-```
-Priority: P1 (Critical)
-Customer Impact: Production web server unreachable
-Symptoms: Cannot SSH to instance, HTTP requests timing out
-Duration: Ongoing for 15 minutes
-```
+- **Priority:** P1 (Critical)
+- **Customer Impact:** Production web server unreachable
+- **Symptoms:** Cannot SSH to instance, HTTP requests timing out
+- **Duration:** Ongoing for 15 minutes
 
 **What You'll Investigate:**
 - ✅ VPC networking configuration
@@ -60,8 +94,7 @@ Duration: Ongoing for 15 minutes
 - ✅ VPC Flow Logs analysis
 - ✅ Instance status checks
 
-**Root Cause Discovery:**
-You'll use CloudWatch, VPC Flow Logs, and AWS Console to identify why the instance is unreachable—could be security group misconfiguration, route table issues, or instance health problems.
+**Root Cause Discovery:** Use CloudWatch, VPC Flow Logs, and AWS Console to identify why the instance is unreachable—security group misconfiguration, route table issues, or instance health problems.
 
 **AWS Services:** EC2, VPC, Security Groups, CloudWatch, VPC Flow Logs
 
@@ -71,19 +104,15 @@ You'll use CloudWatch, VPC Flow Logs, and AWS Console to identify why the instan
 - Understanding security group vs NACL differences
 - EC2 instance status check interpretation
 
-[📖 **Full Incident Guide →**](scenarios/001-ec2-connectivity/README.md)
-
 ---
 
 ### 🟠 Scenario 002: S3 Security Incident - Unauthorized Access
 
 **Incident Report:**
-```
-Priority: P0 (Critical Security Incident)
-Customer Impact: S3 bucket may be publicly exposed
-Symptoms: GuardDuty alert - S3 bucket accessed from suspicious IP
-Duration: Discovery within last 24 hours
-```
+- **Priority:** P0 (Critical Security Incident)
+- **Customer Impact:** S3 bucket may be publicly exposed
+- **Symptoms:** GuardDuty alert - S3 bucket accessed from suspicious IP
+- **Duration:** Discovery within last 24 hours
 
 **What You'll Investigate:**
 - ✅ S3 bucket policies and permissions
@@ -93,8 +122,7 @@ Duration: Discovery within last 24 hours
 - ✅ S3 access logs analysis
 - ✅ Block Public Access settings
 
-**Root Cause Discovery:**
-Use CloudTrail to investigate who made configuration changes, analyze bucket policies to identify the vulnerability, and determine if data was accessed.
+**Root Cause Discovery:** Use CloudTrail to investigate who made configuration changes, analyze bucket policies to identify the vulnerability, and determine if data was accessed.
 
 **AWS Services:** S3, IAM, CloudTrail, GuardDuty, AWS Config
 
@@ -105,19 +133,15 @@ Use CloudTrail to investigate who made configuration changes, analyze bucket pol
 - Understanding IAM vs bucket policies
 - Implementing least privilege access
 
-[📖 **Full Incident Guide →**](scenarios/002-s3-security/README.md)
-
 ---
 
 ### 🟡 Scenario 003: Lambda Function Timeout Under Load
 
 **Incident Report:**
-```
-Priority: P2 (High)
-Customer Impact: API requests failing with 504 Gateway Timeout
-Symptoms: Lambda function timing out during peak traffic
-Duration: Started 30 minutes ago, affecting 25% of requests
-```
+- **Priority:** P2 (High)
+- **Customer Impact:** API requests failing with 504 Gateway Timeout
+- **Symptoms:** Lambda function timing out during peak traffic
+- **Duration:** Started 30 minutes ago, affecting 25% of requests
 
 **What You'll Investigate:**
 - ✅ CloudWatch Logs for error patterns
@@ -127,8 +151,7 @@ Duration: Started 30 minutes ago, affecting 25% of requests
 - ✅ Cold start vs warm start performance
 - ✅ Downstream service dependencies
 
-**Root Cause Discovery:**
-Analyze CloudWatch Logs and Metrics to determine if the issue is insufficient memory, timeout configuration, throttling, or dependency problems.
+**Root Cause Discovery:** Analyze CloudWatch Logs and Metrics to determine if the issue is insufficient memory, timeout configuration, throttling, or dependency problems.
 
 **AWS Services:** Lambda, CloudWatch Logs, CloudWatch Metrics, API Gateway
 
@@ -139,19 +162,19 @@ Analyze CloudWatch Logs and Metrics to determine if the issue is insufficient me
 - Identifying throttling vs timeout vs errors
 - Optimization strategies
 
-[📖 **Full Incident Guide →**](scenarios/003-lambda-timeout/README.md)
-
 ---
 
 ### 🟣 Scenario 004: GuardDuty Security Alert - Compromised Credentials
 
+![GuardDuty Dashboard](screenshots/07_guardduty_dashboard_overview.png)
+
+*GuardDuty threat detection dashboard showing security findings and alert severity levels*
+
 **Incident Report:**
-```
-Priority: P0 (Critical Security Incident)
-Customer Impact: Potential IAM credential compromise
-Symptoms: GuardDuty alert - IAM credentials used from suspicious location
-Duration: Alert triggered 2 hours ago
-```
+- **Priority:** P0 (Critical Security Incident)
+- **Customer Impact:** Potential IAM credential compromise
+- **Symptoms:** GuardDuty alert - IAM credentials used from suspicious location
+- **Duration:** Alert triggered 2 hours ago
 
 **What You'll Investigate:**
 - ✅ GuardDuty finding details and severity
@@ -161,8 +184,7 @@ Duration: Alert triggered 2 hours ago
 - ✅ Resources accessed or created
 - ✅ Blast radius assessment
 
-**Root Cause Discovery:**
-Investigate GuardDuty findings, trace API calls in CloudTrail, assess what resources were accessed, and determine containment strategy.
+**Root Cause Discovery:** Investigate GuardDuty findings, trace API calls in CloudTrail, assess what resources were accessed, and determine containment strategy.
 
 **AWS Services:** GuardDuty, CloudTrail, IAM, AWS Config
 
@@ -173,19 +195,15 @@ Investigate GuardDuty findings, trace API calls in CloudTrail, assess what resou
 - CloudTrail investigation techniques
 - Implementing detective controls
 
-[📖 **Full Incident Guide →**](scenarios/004-guardduty-alert/README.md)
-
 ---
 
 ### 🔵 Scenario 005: EC2 High CPU Utilization
 
 **Incident Report:**
-```
-Priority: P2 (High)
-Customer Impact: Application performance degraded
-Symptoms: EC2 instance running at 95%+ CPU for 20 minutes
-Duration: Ongoing, customers reporting slow response times
-```
+- **Priority:** P2 (High)
+- **Customer Impact:** Application performance degraded
+- **Symptoms:** EC2 instance running at 95%+ CPU for 20 minutes
+- **Duration:** Ongoing, customers reporting slow response times
 
 **What You'll Investigate:**
 - ✅ CloudWatch CPU metrics and trends
@@ -195,8 +213,7 @@ Duration: Ongoing, customers reporting slow response times
 - ✅ Recent deployments or changes
 - ✅ Auto-scaling configuration
 
-**Root Cause Discovery:**
-Use CloudWatch metrics, SSH into instance to check processes, review application logs, and determine if it's a code issue, resource constraint, or external attack.
+**Root Cause Discovery:** Use CloudWatch metrics, SSH into instance to check processes, review application logs, and determine if it's a code issue, resource constraint, or external attack.
 
 **AWS Services:** EC2, CloudWatch, Auto Scaling, Systems Manager
 
@@ -207,19 +224,15 @@ Use CloudWatch metrics, SSH into instance to check processes, review application
 - Identifying runaway processes
 - Right-sizing recommendations
 
-[📖 **Full Incident Guide →**](scenarios/005-ec2-high-cpu/README.md)
-
 ---
 
 ### 🟢 Scenario 006: Lambda DynamoDB Throttling
 
 **Incident Report:**
-```
-Priority: P2 (High)
-Customer Impact: API requests failing with 500 errors
-Symptoms: Lambda function errors - DynamoDB throttling exceptions
-Duration: Started 45 minutes ago, error rate climbing
-```
+- **Priority:** P2 (High)
+- **Customer Impact:** API requests failing with 500 errors
+- **Symptoms:** Lambda function errors - DynamoDB throttling exceptions
+- **Duration:** Started 45 minutes ago, error rate climbing
 
 **What You'll Investigate:**
 - ✅ Lambda CloudWatch Logs for exceptions
@@ -229,8 +242,7 @@ Duration: Started 45 minutes ago, error rate climbing
 - ✅ Query patterns and hot partitions
 - ✅ Burst capacity usage
 
-**Root Cause Discovery:**
-Analyze why DynamoDB is throttling—insufficient provisioned capacity, hot partition key, or sudden traffic spike—and implement proper scaling.
+**Root Cause Discovery:** Analyze why DynamoDB is throttling—insufficient provisioned capacity, hot partition key, or sudden traffic spike—and implement proper scaling.
 
 **AWS Services:** Lambda, DynamoDB, CloudWatch
 
@@ -241,19 +253,15 @@ Analyze why DynamoDB is throttling—insufficient provisioned capacity, hot part
 - Lambda retry behavior
 - Performance optimization
 
-[📖 **Full Incident Guide →**](scenarios/006-lambda-dynamodb/README.md)
-
 ---
 
 ### ⚫ Scenario 007: Multi-Service Outage (Advanced)
 
 **Incident Report:**
-```
-Priority: P0 (Critical - Multiple Services Down)
-Customer Impact: Complete service outage affecting all customers
-Symptoms: Web app down, API errors, database connectivity issues
-Duration: Outage started 10 minutes ago
-```
+- **Priority:** P0 (Critical - Multiple Services Down)
+- **Customer Impact:** Complete service outage affecting all customers
+- **Symptoms:** Web app down, API errors, database connectivity issues
+- **Duration:** Outage started 10 minutes ago
 
 **What You'll Investigate:**
 - ✅ Multiple CloudWatch dashboards
@@ -263,8 +271,7 @@ Duration: Outage started 10 minutes ago
 - ✅ Dependency chain analysis
 - ✅ Cascading failure identification
 
-**Root Cause Discovery:**
-This complex scenario requires investigating multiple services simultaneously, identifying the primary failure point, and understanding how it cascaded through the system.
+**Root Cause Discovery:** This complex scenario requires investigating multiple services simultaneously, identifying the primary failure point, and understanding how it cascaded through the system.
 
 **AWS Services:** EC2, Lambda, RDS, ALB, CloudWatch, CloudTrail, VPC
 
@@ -275,196 +282,166 @@ This complex scenario requires investigating multiple services simultaneously, i
 - War room communication
 - Post-incident review process
 
-[📖 **Full Incident Guide →**](scenarios/007-multi-service/README.md)
+---
+
+## Monitoring & Observability
+
+![CloudWatch Dashboard](screenshots/09_cloudwatch_monitoring_dashboard.png)
+
+*Comprehensive CloudWatch monitoring dashboard for investigating incidents with metrics, logs, and alarms*
+
+**Observability Stack:**
+- **CloudWatch Logs:** Application and system log aggregation
+- **CloudWatch Metrics:** Performance metrics and custom metrics
+- **VPC Flow Logs:** Network traffic analysis
+- **CloudTrail:** API audit trail and forensics
+- **GuardDuty:** Threat detection and security monitoring
+- **X-Ray:** Distributed tracing for Lambda functions
 
 ---
 
-## 🚀 Quick Start
+## Setup
 
 ### Prerequisites
 
-```bash
-✓ AWS Account (Free Tier works)
-✓ AWS CLI configured
-✓ Terraform 1.0+
-✓ Python 3.9+
-✓ Basic understanding of AWS services
-```
+**Required:**
+- ✅ AWS Account (Free Tier works)
+- ✅ AWS CLI configured
+- ✅ Terraform 1.0+
+- ✅ Python 3.9+
+- ✅ Basic understanding of AWS services
+
+**Recommended:**
+- Git installed
+- Text editor (VS Code)
+- 2-3 hours per scenario
 
 ### Installation
 
+**1. Clone Repository**
 ```bash
-# 1. Clone the repository
 git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
 cd AWS_Cloud_Support_Sim
+```
 
-# 2. Install Python dependencies
+**2. Install Python Dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-# 3. Start with Scenario 001
+**3. Configure AWS Credentials**
+```bash
+aws configure
+# Enter: Access Key ID, Secret Access Key, Region (us-east-1), Output format (json)
+```
+
+**4. Set Up Billing Alerts**
+```bash
+# Go to AWS Console → Billing → Budgets → Create budget
+# Set thresholds at $10, $20
+```
+
+### Running Your First Scenario
+
+**Start with Scenario 001 (Beginner-Friendly):**
+
+```bash
+# Navigate to first scenario
 cd scenarios/001-ec2-connectivity
 
-# 4. Read the incident brief
+# Read incident brief
 cat README.md
 
-# 5. Deploy the "broken" infrastructure
+# Deploy infrastructure
 cd terraform
 terraform init
 terraform apply
 
-# 6. Follow incident response workflow:
-#    → Receive incident report
-#    → Investigate using CloudWatch/AWS Console
-#    → Analyze logs and metrics
-#    → Identify root cause
-#    → Implement remediation
-#    → Document findings
-#    → Apply prevention measures
+# Follow incident response workflow:
+# 1. Receive incident report
+# 2. Investigate using CloudWatch/Console
+# 3. Analyze logs and metrics
+# 4. Identify root cause
+# 5. Implement remediation
+# 6. Document findings
+# 7. Apply prevention measures
 
-# 7. Clean up resources
+# Clean up resources
 terraform destroy
 ```
 
----
+### Cost Management
 
-## 📂 Project Structure
+**Expected Costs:**
+- All scenarios: < $5/month on AWS Free Tier
+- EC2: $0 (t2.micro)
+- Lambda: $0 (1M free requests)
+- CloudWatch: $3-5 (logs and metrics)
+- DynamoDB: $0 (25 GB free)
 
-```
-AWS_Cloud_Support_Sim/
-├── .github/
-│   └── workflows/          # CI/CD automation
-├── diagrams/               # Architecture diagrams
-├── docs/                   # Documentation
-│   ├── incident-response-playbook.md
-│   └── troubleshooting-guide.md
-├── scenarios/              # The 7 incident scenarios
-│   ├── 001-ec2-connectivity/
-│   │   ├── terraform/      # Infrastructure with the "issue"
-│   │   ├── scripts/        # Investigation helper scripts
-│   │   ├── screenshots/    # Visual investigation examples
-│   │   └── README.md       # Incident brief & walkthrough
-│   ├── 002-s3-security/
-│   ├── 003-lambda-timeout/
-│   ├── 004-guardduty-alert/
-│   ├── 005-ec2-high-cpu/
-│   ├── 006-lambda-dynamodb/
-│   └── 007-multi-service/
-├── scripts/                # Utility scripts
-│   ├── validate_system.py
-│   └── health_check.py
-├── src/                    # Core utilities
-├── tests/                  # Validation tests
-├── main.py                 # Main application
-└── README.md              # This file
-```
+**Cost-Saving Tips:**
+1. Use us-east-1 region (cheapest)
+2. Run scenarios one at a time
+3. Always run `terraform destroy` after completion
+4. Set up billing alerts
+5. Check AWS Console for orphaned resources
 
 ---
 
-## 🎓 Learning Path
+## Usage
 
-### 🟢 Beginner Track (Start Here)
+### Learning Path
+
+**🟢 Beginner Track** (Start here)
 
 **Scenario 001: EC2 Connectivity** (2-3 hours)
-- Learn basic AWS troubleshooting
-- Practice reading VPC Flow Logs
-- Understand security groups
+- Foundation: VPC networking, security groups
+- Skills: Basic troubleshooting, log analysis
+- Outcome: Network security understanding
 
 **Scenario 002: S3 Security** (2-3 hours)
-- Introduction to security incidents
-- Practice CloudTrail investigation
-- Learn IAM and bucket policies
+- Foundation: S3 security model, IAM
+- Skills: CloudTrail forensics, incident response
+- Outcome: Security incident handling
 
-### 🟡 Intermediate Track
+---
+
+**🟡 Intermediate Track**
 
 **Scenario 003: Lambda Timeout** (3 hours)
-- CloudWatch Logs deep dive
-- Serverless troubleshooting
-- Performance optimization
+- Foundation: Serverless architecture
+- Skills: Performance tuning, CloudWatch
+- Outcome: Lambda optimization
 
 **Scenario 005: EC2 High CPU** (3 hours)
-- System performance investigation
-- Process-level debugging
-- Right-sizing methodology
+- Foundation: System performance
+- Skills: Process debugging, monitoring
+- Outcome: Right-sizing methodology
 
 **Scenario 006: DynamoDB Throttling** (3 hours)
-- Database performance issues
-- Capacity planning
-- Query optimization
+- Foundation: Database performance
+- Skills: Capacity planning, optimization
+- Outcome: Database troubleshooting
 
-### 🔴 Advanced Track
+---
+
+**🔴 Advanced Track**
 
 **Scenario 004: GuardDuty Alert** (3-4 hours)
-- Security incident response
-- Forensic investigation
-- Containment strategies
+- Foundation: Security operations
+- Skills: Forensics, containment
+- Outcome: Security incident mastery
 
 **Scenario 007: Multi-Service Outage** (4-5 hours)
-- Complex incident triage
-- Multi-service troubleshooting
-- Production war room simulation
-
-**Total Time:** 20-25 hours to complete all scenarios with documentation
+- Foundation: Complex systems
+- Skills: Multi-service triage
+- Outcome: Production war room readiness
 
 ---
 
-## 💡 Skills You'll Gain
+### Incident Response Methodology
 
-### 🔍 Incident Response
-
-```
-✓ Triage methodology and prioritization
-✓ Systematic investigation approach
-✓ Root cause analysis techniques
-✓ Communication during incidents
-✓ Post-incident review documentation
-```
-
-### ☁️ AWS Troubleshooting
-
-```
-✓ CloudWatch Logs and Metrics interpretation
-✓ VPC networking diagnosis
-✓ Security group and NACL debugging
-✓ Lambda performance troubleshooting
-✓ DynamoDB capacity management
-✓ IAM permission issues
-```
-
-### 📊 Observability
-
-```
-✓ Reading CloudWatch dashboards
-✓ Analyzing VPC Flow Logs
-✓ CloudTrail forensic investigation
-✓ GuardDuty finding interpretation
-✓ Metric correlation and analysis
-```
-
-### 🔒 Security Response
-
-```
-✓ Security incident investigation
-✓ Credential compromise containment
-✓ S3 bucket security hardening
-✓ IAM policy review and remediation
-✓ Implementing preventive controls
-```
-
-### 🛠️ Technical Skills
-
-```
-✓ AWS CLI proficiency
-✓ Terraform infrastructure debugging
-✓ Python scripting for automation
-✓ SSH and system administration
-✓ Log pattern recognition
-```
-
----
-
-## 🔧 Incident Response Methodology
-
-Each scenario follows the standard cloud support workflow:
+Each scenario follows standard cloud support workflow:
 
 ```
 1. RECEIVE INCIDENT
@@ -480,8 +457,8 @@ Each scenario follows the standard cloud support workflow:
 
 3. IDENTIFY ROOT CAUSE
    └─→ Test hypotheses systematically
-   └─→ Reproduce the issue if possible
-   └─→ Isolate the failing component
+   └─→ Reproduce issue if possible
+   └─→ Isolate failing component
    └─→ Confirm root cause
 
 4. IMPLEMENT FIX
@@ -505,147 +482,12 @@ Each scenario follows the standard cloud support workflow:
 
 ---
 
-## 📈 What Makes This Different
+### Validation
 
-| Traditional Tutorials | This Simulator |
-|----------------------|----------------|
-| ❌ Build perfect infrastructure | ✅ Fix broken production systems |
-| ❌ Everything works first try | ✅ Diagnose real failures |
-| ❌ No time pressure | ✅ Simulate critical incidents |
-| ❌ Skip troubleshooting | ✅ Practice investigation skills |
-| ❌ No customer communication | ✅ Draft incident updates |
-
----
-
-## 🎯 Use Cases
-
-### For Job Seekers
-
-**Portfolio Project**
-- Demonstrate hands-on troubleshooting experience
-- Show systematic problem-solving approach
-- Prove CloudWatch and logging skills
-
-**Interview Preparation**
-- Reference specific incidents you've investigated
-- Discuss your troubleshooting methodology
-- Show familiarity with production scenarios
-
-**Resume Skills**
-- List concrete AWS services debugged
-- Show incident response experience
-- Demonstrate observability knowledge
-
-### For Cloud Support Engineers
-
-**Skills Development**
-- Practice new service troubleshooting
-- Refine investigation methodology
-- Build troubleshooting playbooks
-
-**Certification Prep**
-- AWS Solutions Architect - Associate/Professional
-- AWS SysOps Administrator
-- Hands-on experience for scenario questions
-
-### For Career Changers
-
-**Build Confidence**
-- Work through real scenarios in safe environment
-- Develop troubleshooting muscle memory
-- Learn to read logs like a pro
-
-**Prove Capabilities**
-- Tangible evidence of support skills
-- GitHub project showing investigation work
-- Document problem-solving abilities
-
----
-
-## 🛠️ Technologies Used
-
-| Category | Technologies |
-|----------|-------------|
-| **Cloud Platform** | AWS (EC2, S3, Lambda, VPC, IAM, GuardDuty, CloudWatch) |
-| **Infrastructure** | Terraform, Infrastructure as Code |
-| **Monitoring** | CloudWatch Logs, Metrics, Alarms, VPC Flow Logs, CloudTrail |
-| **Languages** | Python 3.9+, Bash, HCL (Terraform) |
-| **Security** | GuardDuty, IAM, CloudTrail, AWS Config |
-| **Tools** | AWS CLI, boto3, Git |
-
----
-
-## 💼 Scenario Difficulty & Time
-
-| Scenario | Difficulty | Time | Priority | Services |
-|----------|-----------|------|----------|----------|
-| 001: EC2 Connectivity | 🟢 Beginner | 2-3h | P1 | EC2, VPC, Security Groups |
-| 002: S3 Security | 🟢 Beginner | 2-3h | P0 | S3, IAM, CloudTrail, GuardDuty |
-| 003: Lambda Timeout | 🟡 Intermediate | 3h | P2 | Lambda, CloudWatch |
-| 005: EC2 High CPU | 🟡 Intermediate | 3h | P2 | EC2, CloudWatch |
-| 006: DynamoDB Throttling | 🟡 Intermediate | 3h | P2 | Lambda, DynamoDB |
-| 004: GuardDuty Alert | 🔴 Advanced | 3-4h | P0 | GuardDuty, CloudTrail, IAM |
-| 007: Multi-Service | 🔴 Advanced | 4-5h | P0 | EC2, Lambda, RDS, ALB, VPC |
-
----
-
-## 🔒 Cost & Resource Management
-
-### AWS Costs
-
-**Free Tier Compatible:** All scenarios run on AWS Free Tier
-
-**Estimated Monthly Cost:**
-- EC2: $0 (t2.micro in Free Tier)
-- Lambda: $0 (1M free requests)
-- CloudWatch: $3-5 (logs and metrics)
-- DynamoDB: $0 (25 GB free)
-- **Total: < $5/month**
-
-### Cost Controls
+**Each scenario includes automated validation:**
 
 ```bash
-✓ Use t2.micro and t3.micro instances
-✓ Deploy only during active learning
-✓ Set up billing alerts ($10, $20 thresholds)
-✓ Run `terraform destroy` after each scenario
-✓ Check AWS Console for orphaned resources
-```
-
-### Complete Cleanup
-
-```bash
-# Destroy all scenario infrastructure
-cd scenarios/001-ec2-connectivity/terraform
-terraform destroy -auto-approve
-
-# Repeat for all scenarios
-# Or use cleanup script:
-python scripts/cleanup_all.py
-```
-
----
-
-## 📖 Documentation
-
-Each scenario includes:
-
-- **Incident Brief** - Initial report with symptoms
-- **Investigation Guide** - Step-by-step troubleshooting
-- **Expected Findings** - What you should discover
-- **Remediation Steps** - How to fix the issue
-- **Prevention Measures** - Stop it from happening again
-- **Learning Outcomes** - Skills practiced
-- **Additional Resources** - AWS docs and best practices
-
----
-
-## ✅ Validation
-
-Each scenario includes validation to confirm your fix:
-
-```bash
-# After implementing your fix, run validation
+# After implementing your fix
 python scripts/validate_fix.py
 
 # Expected output:
@@ -662,141 +504,207 @@ Time to Resolution: 45 minutes
 
 ---
 
-## 🎓 Learning Resources
+## Skills Demonstrated
 
-### AWS Documentation
-- [CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html)
-- [VPC Flow Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
-- [GuardDuty Findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
-- [Lambda Monitoring](https://docs.aws.amazon.com/lambda/latest/dg/lambda-monitoring.html)
+This repository showcases practical skills essential for cloud support roles:
 
-### AWS Well-Architected Framework
-- [Operational Excellence Pillar](https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html)
-- [Security Pillar](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html)
-- [Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html)
+### Incident Response
+- ✅ **Triage Methodology:** Prioritization and systematic investigation
+- ✅ **Root Cause Analysis:** Hypothesis-driven troubleshooting
+- ✅ **Communication:** Incident updates and documentation
+- ✅ **Post-Incident Review:** Lessons learned and prevention
+
+### AWS Troubleshooting
+- ✅ **CloudWatch:** Logs, Metrics, Alarms, Dashboards
+- ✅ **VPC Networking:** Security groups, NACLs, route tables, Flow Logs
+- ✅ **Lambda:** Performance tuning, memory optimization, cold starts
+- ✅ **DynamoDB:** Capacity management, throttling, partition keys
+- ✅ **IAM:** Permission debugging, policy analysis
+
+### Security Operations
+- ✅ **Security Incidents:** Investigation and containment
+- ✅ **GuardDuty:** Finding interpretation and response
+- ✅ **CloudTrail:** Forensic investigation
+- ✅ **S3 Security:** Bucket policies, IAM, Block Public Access
+- ✅ **Preventive Controls:** Implementing security guardrails
+
+### Technical Skills
+- ✅ **AWS CLI:** Proficient command-line usage
+- ✅ **Terraform:** Infrastructure debugging and deployment
+- ✅ **Python:** Scripting for automation (boto3)
+- ✅ **SSH:** System administration and debugging
+- ✅ **Log Analysis:** Pattern recognition and correlation
+
+### Observability
+- ✅ **CloudWatch Integration:** Logs, Metrics, Alarms
+- ✅ **VPC Flow Logs:** Network traffic analysis
+- ✅ **CloudTrail:** API audit trail investigation
+- ✅ **GuardDuty:** Threat detection and monitoring
+- ✅ **Metric Correlation:** Cross-service analysis
 
 ---
 
-## 📞 Connect
+## Metrics & Outcomes
 
-**Charles Bucher** | Cloud Support Engineer | AWS Troubleshooting Specialist
+| Metric | Value |
+|--------|-------|
+| **Incident Scenarios** | 7 Production-Grade Cases |
+| **AWS Services** | EC2, S3, Lambda, GuardDuty, CloudWatch, IAM |
+| **Response Skills** | Investigation, Analysis, Remediation, Prevention |
+| **Infrastructure** | 100% Terraform |
+| **Time Investment** | 20-25 Hours Total |
+| **Cost** | < $5 Total |
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/charles-bucher-cloud)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/charles-bucher)
+### What You'll Have After Completion:
+
+| Outcome | Description |
+|---------|-------------|
+| 📂 **Portfolio Project** | GitHub repository demonstrating incident response skills |
+| 🔍 **Troubleshooting Experience** | Investigated 7 production-grade incidents |
+| ☁️ **AWS Knowledge** | Hands-on with 8+ AWS services |
+| 🎓 **Methodology** | Systematic incident response approach |
+| 📊 **Observability Skills** | CloudWatch Logs, Metrics, and monitoring |
+| 🔒 **Security Operations** | Security incident investigation and containment |
+| 💼 **Interview Stories** | Real scenarios to discuss in interviews |
+| 📝 **Documentation** | Incident reports and runbooks |
 
 ---
 
-## 🌟 Related Projects
+## Use Cases
+
+### 📋 For Job Seekers
+- **Portfolio Project:** Demonstrate hands-on troubleshooting
+- **Interview Prep:** Reference specific incidents investigated
+- **Resume Skills:** List concrete AWS services debugged
+- **GitHub Activity:** Show active learning
+
+### 📜 For Certification Study
+- **AWS Solutions Architect:** Real-world scenario practice
+- **AWS SysOps Administrator:** Operations troubleshooting
+- **AWS DevOps Engineer:** Infrastructure automation
+
+### 🚀 For Career Changers
+- **Practical Experience:** Build skills without a job
+- **Confidence Building:** Safe environment to practice
+- **Portfolio Building:** Tangible proof of capabilities
+- **Communication:** Practice explaining technical issues
+
+---
+
+## Scenario Difficulty & Time
+
+| Scenario | Difficulty | Time | Priority | Services |
+|----------|-----------|------|----------|----------|
+| 001: EC2 Connectivity | 🟢 Beginner | 2-3h | P1 | EC2, VPC, Security Groups |
+| 002: S3 Security | 🟢 Beginner | 2-3h | P0 | S3, IAM, CloudTrail, GuardDuty |
+| 003: Lambda Timeout | 🟡 Intermediate | 3h | P2 | Lambda, CloudWatch |
+| 005: EC2 High CPU | 🟡 Intermediate | 3h | P2 | EC2, CloudWatch |
+| 006: DynamoDB Throttling | 🟡 Intermediate | 3h | P2 | Lambda, DynamoDB |
+| 004: GuardDuty Alert | 🔴 Advanced | 3-4h | P0 | GuardDuty, CloudTrail, IAM |
+| 007: Multi-Service | 🔴 Advanced | 4-5h | P0 | EC2, Lambda, RDS, ALB, VPC |
+
+---
+
+## Related Projects
 
 **Hands-On AWS Learning:**
 
 - **[AWS Error-Driven Troubleshooting Lab](https://github.com/charles-bucher/AWS_Error_Driven_Troubleshooting_Lab)** - Break and fix AWS infrastructure systematically
-- **[AWS CloudOps Suite](https://github.com/charles-bucher/AWS_CloudOps_Suite)** - Production-grade automation and monitoring
+- **[AWS CloudOps Suite](https://github.com/charles-bucher/AWS_Cloudops_Suite)** - Production-grade automation and monitoring
+- **[CloudOpsLab](https://github.com/charles-bucher/CloudOpsLab)** - Monitoring and self-healing automation
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions welcome! Help improve these scenarios:
+Contributions welcome! Ways to help:
 
-- 🐛 Report issues or unclear instructions
-- 💡 Suggest new incident scenarios
-- 📝 Improve documentation and runbooks
-- ✨ Add investigation tools and scripts
-- 🧪 Contribute validation tests
+| Type | How to Help |
+|------|-------------|
+| 🐛 **Bugs** | Report issues with scenarios |
+| 💡 **Ideas** | Suggest new incident scenarios |
+| 📝 **Docs** | Improve documentation and runbooks |
+| ✨ **Features** | Add investigation tools |
+| 🧪 **Tests** | Contribute validation tests |
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+**To Contribute:**
+1. Fork this repository
+2. Create feature branch (`git checkout -b feature/new-scenario`)
+3. Commit changes (`git commit -m 'Add EC2 network scenario'`)
+4. Push to branch (`git push origin feature/new-scenario`)
+5. Open Pull Request
 
----
-
-## 📜 License
-
-MIT License - see [LICENSE.md](LICENSE.md) for details.
-
-Free to use for learning, portfolio projects, and interview preparation.
-
----
-
-## 🏆 Success Metrics
-
-Track your incident response skills:
-
-- [ ] 🟢 Completed 2 beginner scenarios
-- [ ] 🟡 Completed 3 intermediate scenarios
-- [ ] 🔴 Completed 2 advanced scenarios
-- [ ] 📝 Documented all investigations
-- [ ] 🎯 Average resolution time < 2 hours
-- [ ] ⭐ Added to resume/portfolio
-- [ ] 💼 Referenced in job interview
-- [ ] 🎊 Landed cloud support role
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
-## ⭐ Support This Project
+## License
 
-**If this helped you land a cloud role or improve your troubleshooting skills:**
+This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) for details.
 
-1. ⭐ **Star this repository** - Help others discover it
-2. 📢 **Share** - Tell others learning AWS
-3. 💼 **Mention in interviews** - Reference specific scenarios
-4. 🤝 **Connect** - Share your success story
+```
+MIT License
+
+Copyright (c) 2024 Charles Bucher
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+```
+
+**Free to use for:**
+- Personal learning
+- Portfolio projects
+- Interview preparation
+- Educational purposes
 
 ---
 
-<div align="center">
+## Contact
+
+**Charles Bucher**  
+Cloud Support Engineer | AWS Troubleshooting Specialist
+
+- 📧 Email: quietopscb@gmail.com
+- 💼 LinkedIn: [charles-bucher-cloud](https://linkedin.com/in/charles-bucher-cloud)
+- 🌐 Portfolio: [charles-bucher.github.io](https://charles-bucher.github.io/)
+- 💻 GitHub: [@charles-bucher](https://github.com/charles-bucher)
+
+---
+
+## Support This Project
+
+If this helped you improve your troubleshooting skills or land a cloud role:
+
+- ⭐ **Star this repository** - Help others discover it
+- 📢 **Share with others** - Learning AWS or cloud support
+- 💼 **Mention in interviews** - Reference specific scenarios
+- 🤝 **Connect with me** - Share your success story
+
+---
 
 **Learn troubleshooting by responding to real incidents**
 
-Practice makes perfect. Incidents make you better.
+*Practice makes perfect. Incidents make you better.*
 
-Made with 🔧 for cloud support engineers by cloud support engineers
-
-**[⬆ Back to Top](#aws-cloud-support-simulator)**
-
-</div>
+*Made with 🔧 for cloud support engineers by cloud support engineers*
 
 ---
 
-## 📋 Keywords for ATS/Search
+## Keywords
 
-AWS cloud support, incident response, troubleshooting AWS, CloudWatch Logs, root cause analysis, AWS support engineer, cloud operations, EC2 troubleshooting, Lambda debugging, S3 security, GuardDuty alerts, VPC networking, security incident response, performance troubleshooting, AWS monitoring, observability, CloudTrail forensics, technical support engineer, site reliability engineering, production debugging, AWS certification prep, hands-on AWS labs, cloud support portfolio, AWS troubleshooting methodology, incident management, problem resolution, AWS best practices, cloud engineer entry level
-## Deployment
-Content to be added.
+AWS cloud support, incident response, troubleshooting AWS, CloudWatch Logs, root cause analysis, AWS support engineer, cloud operations, EC2 troubleshooting, Lambda debugging, S3 security, GuardDuty alerts, VPC networking, security incident response, performance troubleshooting, AWS monitoring, observability, CloudTrail forensics, technical support engineer, site reliability engineering, production debugging, AWS certification prep, hands-on AWS labs, cloud support portfolio
 
-## Tech Stack
-Content to be added.
+---
 
-## Setup Instructions
-1. Clone the repo
-2. Install dependencies (`pip install -r requirements.txt` or as needed)
-3. Configure environment variables if required
-4. Run scripts or tests
-
-## Usage Examples
-```bash
-python script_name.py --example-arg value
-```
-Replace with actual usage commands for this repo.
-
-## Screenshots
-Include screenshots of outputs, dashboards, or any UI here. Example:
-![Example](path_to_screenshot.png)
-
-## Contact
-Reach me at your-email@example.com or GitHub: https://github.com/Charles-Bucher
-
-
-## Overview
-_TODO: Describe this section._
-
-
-## Features
-_TODO: Describe this section._
-
-
-## Skills Demonstrated
-_TODO: Describe this section._
-
-
-## License
-_TODO: Describe this section._
+[![AWS](https://img.shields.io/badge/AWS-Cloud%20Support-orange)](https://aws.amazon.com/) [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/) [![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)](https://www.terraform.io/)
