@@ -1,20 +1,35 @@
 ☁️ AWS Cloud Support Simulator
 
-Hands-on AWS Cloud Support & CloudOps lab for troubleshooting EC2, Lambda, S3, VPC, and GuardDuty incidents using realistic cloud support scenarios. Ideal for Cloud Support, CloudOps, DevOps, and SysOps portfolios.
+
+
+
+
+
+
+
+
+
+
+
+Hands-on AWS Cloud Support & SysOps simulation lab focused on real-world troubleshooting, monitoring, automation, and incident response across core AWS services.
+
+This repository is designed to mirror the day-to-day responsibilities of an AWS Cloud Support / SysOps Associate and serves as a portfolio project for cloud career transitioners.
 
 📝 TL;DR
 
-7 production-grade AWS incident simulations (P0/P1/P2)
+Simulates real AWS production incidents (P0–P2)
 
-Automate and monitor incidents with Python, Terraform, CloudWatch, and AWS CLI
+Troubleshoot EC2, Lambda, S3, VPC, IAM, CloudWatch issues
 
-Build portfolio-ready projects demonstrating CloudOps & DevOps skills
+Uses Terraform, Python (boto3), AWS CLI
 
-Gain hands-on experience aligned with AWS SysOps and Solutions Architect certs
+Built to align directly with AWS SysOps Administrator (SOA-C02)
+
+Portfolio-ready, recruiter-readable, cert-aligned
 
 📌 Table of Contents
 
-Purpose
+Overview
 
 Features
 
@@ -26,190 +41,194 @@ Usage
 
 Screenshots
 
-Learning Outcomes
+Skills Demonstrated
 
-Portfolio & Career Alignment
+SysOps & Career Alignment
 
 Tech Stack
 
-Contributing
+License
 
-Contact
+🔍 Overview
 
-Support
+This project simulates real AWS Cloud Support tickets and operational failures that commonly occur in production environments.
 
-🎯 Purpose
+Each scenario requires you to:
 
-Gain real-world AWS Cloud Support experience by investigating 7 production incidents, demonstrating:
+Identify the root cause using CloudWatch metrics/logs
 
-Logs analysis
+Validate IAM, networking, and service configurations
 
-Metrics monitoring
+Apply a fix using AWS Console, CLI, or automation
 
-Incident response
+Prevent recurrence through monitoring or IaC improvements
 
-Remediation & prevention
+The goal is not just “deployment,” but operational excellence, troubleshooting depth, and clear documentation — exactly what AWS support and SysOps roles expect.
 
 🔥 Features
 
-Production-grade incidents for EC2, Lambda, S3, VPC, GuardDuty
+EC2 connectivity and performance failures
 
-Cloud observability: CloudWatch Logs/Metrics/Dashboards, X-Ray
+Lambda timeout, memory, and permission issues
 
-Security operations: GuardDuty alerts, IAM forensics, CloudTrail investigations
+S3 access and policy misconfigurations
 
-Performance tuning: Lambda & EC2 optimization, DynamoDB capacity planning
+VPC routing, NAT, and security group errors
 
-Infrastructure as Code: Terraform modules
+CloudWatch alarms, dashboards, and log analysis
 
-Automation: Python (boto3), AWS CLI, Bash scripts
+Terraform-based infrastructure deployments
 
-Incident reporting: Runbooks & post-mortems
+Python automation scripts for validation and remediation
+
+Incident-style runbooks and troubleshooting notes
 
 🏗️ Architecture
 
-Multi-Tier VPC Design (2 AZs)
+High-level architecture used across scenarios:
 
-Route 53 → ALB → Web Tier (EC2) → App Tier (EC2 / Lambda) → Database (RDS / DynamoDB)
+Internet
+   |
+Application Load Balancer
+   |
+EC2 / Lambda (App Tier)
+   |
+RDS / DynamoDB / S3
 
 
-Public Subnet: ALB, web servers
+Core AWS Components
 
-Private Subnet: App servers, RDS/DynamoDB
+VPC with public/private subnets
 
-Networking: NAT Gateway, IGW, Route Tables, SGs, NACLs, Flow Logs
+Security Groups & IAM roles
 
-Monitoring: CloudWatch Logs/Metrics/Alarms/Dashboards, X-Ray
+CloudWatch Logs, Metrics, Alarms
 
-Security: GuardDuty, CloudTrail, IAM, AWS Config
+Terraform-managed infrastructure
+
+AWS CLI & boto3 automation
+
+Designed to reflect SysOps-level operational responsibility, not just architecture diagrams.
 
 📂 Repository Structure
 AWS_Cloud_Support_Sim/
-│
-├── scenarios/          # 7 Production Incidents
-├── cloudwatch/         # Dashboards, Alarms, Log Insights queries
-├── scripts/            # Automation tools (health check, cost analysis, remediation)
-├── terraform/          # Core IaC modules and environment configs
-├── docs/               # Runbooks and troubleshooting guides
-└── tests/              # Automated validation tests
+├── scenarios/          # Incident-based labs
+├── terraform/          # IaC modules & environments
+├── scripts/            # Python automation & validation
+├── cloudwatch/         # Dashboards, alarms, queries
+├── docs/               # Runbooks & troubleshooting notes
+└── screenshots/        # Visual evidence for portfolio
 
 ⚡ Usage
 Prerequisites
 
-AWS Free Tier account
+AWS Account (Free Tier OK)
 
-Python 3.9+ with boto3
+Python 3.9+
 
 Terraform v1.0+
 
 AWS CLI v2
 
-Git
-
-Setup & Run
-# Clone repo
+Setup
 git clone https://github.com/charles-bucher/AWS_Cloud_Support_Sim.git
 cd AWS_Cloud_Support_Sim
-
-# Install dependencies
 pip install -r requirements.txt
+aws configure
 
-# Verify tools
-terraform --version
-aws --version
-python --version
-
-Launch First Scenario
-cd scenarios/001-ec2-connectivity
-
-# Deploy infrastructure
-cd terraform
+Run a Scenario
+cd scenarios/ec2-connectivity
 terraform init
-terraform plan -out=tfplan
-terraform apply tfplan
+terraform apply
 
-# Investigate incident
-cat README.md          # Read incident brief
-python ../../scripts/validate_fix.py --scenario 001
 
-# Clean up resources after scenario
-terraform destroy -auto-approve
+Follow the scenario README to:
+
+Investigate the issue
+
+Apply remediation
+
+Validate the fix
+
+Tear down resources
 
 🖼️ Screenshots
 
-CloudWatch Dashboard:
+Screenshots are included to provide visual proof of hands-on work.
 
+CloudWatch Dashboards
 
-Incident Simulation Output:
+Terraform apply outputs
 
+Incident validation scripts
 
-Terraform Deployed Infrastructure:
+screenshots/
+├── cloudwatch_dashboard.png
+├── terraform_apply.png
+└── incident_validation.png
 
+🧠 Skills Demonstrated
 
-🎓 Learning Outcomes
+AWS Cloud Support troubleshooting
 
-Master VPC networking, Security Groups, NACLs
+SysOps-level monitoring & alerting
 
-Troubleshoot Lambda performance & DynamoDB throttling
+CloudWatch Logs & Metrics analysis
 
-Conduct CloudTrail forensics & GuardDuty investigations
+IAM permission debugging
 
-Automate remediation using Python & Terraform
+VPC networking fundamentals
 
-Build observability stacks with CloudWatch & X-Ray
+Infrastructure as Code (Terraform)
 
-Optimize cloud cost & performance
+Python automation with boto3
 
-💼 Portfolio & Career Alignment
+Incident documentation & root cause analysis
 
-Portfolio Experience Entry:
+🎯 SysOps & Career Alignment
 
-AWS Cloud Operations Lab | Independent Project | 2025
-- Investigated 7 production-grade AWS incidents (P0/P1/P2)
-- Built CloudWatch dashboards and automated monitoring scripts
-- Optimized Lambda, EC2, and DynamoDB performance
-- Conducted security incident response and CloudTrail forensic analysis
-- Deployed environments via Terraform IaC
+Target Roles
 
+AWS Cloud Support Associate
 
-Skills Demonstrated: AWS, CloudOps, Terraform, Python, Observability, Security
+SysOps Administrator
 
-Certifications Prep: AWS SAA-C03, AWS SOA-C02
+Cloud Operations Engineer
+
+Junior Cloud Engineer
+
+Certification Alignment
+
+AWS SysOps Administrator – Associate (SOA-C02)
+
+AWS Solutions Architect – Associate (SAA-C03)
+
+This project is intentionally operations-heavy, not architecture-only.
 
 🛠️ Tech Stack
 
-Cloud: AWS (EC2, Lambda, S3, VPC, RDS, DynamoDB, CloudWatch, CloudTrail, GuardDuty)
+AWS: EC2, Lambda, S3, IAM, VPC, CloudWatch
 
 IaC: Terraform
 
-Automation: Python (boto3), AWS CLI, Bash
+Automation: Python (boto3), AWS CLI
 
-Monitoring/Observability: CloudWatch, X-Ray
+Monitoring: CloudWatch Dashboards & Alarms
 
-🤝 Contributing
+Docs: Markdown, runbooks, diagrams
 
-Fork repo → feature branch → commit → pull request
+📄 License
 
-Suggest new scenarios, scripts, or documentation improvements
+This project is licensed under the MIT License.
 
-📞 Contact
+You are free to:
 
-Charles Bucher – CloudOps Engineer | AWS Specialist
+Use
 
-GitHub: @charles-bucher
+Modify
 
-LinkedIn: charles-bucher-cloud
+Distribute
 
-Email: quietopscb@gmail.com
+Reference in portfolios and resumes
 
-⭐ Support This Project
-
-Star ⭐ on GitHub
-
-Share learning journey on LinkedIn/Twitter
-
-Contribute new scenarios or scripts
-
-🏷️ Keywords
-
-aws cloud-operations devops monitoring lambda terraform s3 dynamodb ec2 vpc cloudwatch guardduty cloudtrail python automation incident-response sre sysops cloud-security performance-optimization iaC infrastructure-as-code cloud-support-engineer portfolio-project
+See the LICENSE file for details.
