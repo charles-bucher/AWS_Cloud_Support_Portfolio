@@ -1,0 +1,285 @@
+{
+  "scan_date": "2026-01-01T14:44:37.281937",
+  "scan_location": "C:\\Users\\buche\\docs\\Desktop\\REPOS\\AWS_Cloud_Support_Sim",
+  "repos_scanned": 9,
+  "repos_skipped": 6,
+  "results": {
+    "diagrams": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {
+        "Other": 3
+      },
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "docs": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {},
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "lambdas": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {},
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "scenarios": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {
+        "YAML": 7,
+        "Markdown": 14,
+        "Other": 9
+      },
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "screenshots": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {
+        "Other": 10
+      },
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "scripts": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {
+        "Python": 2,
+        "Other": 2
+      },
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "security": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {},
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "src": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {
+        "Python": 1
+      },
+      "README Stats": {
+        "lines": 0,
+        "words": 0,
+        "chars": 0,
+        "has_badges": false,
+        "has_toc": false
+      }
+    },
+    "tests": {
+      "Type": "cloud-project",
+      "README Score": 0.0,
+      "Cloud (Cert) Score": 0.0,
+      "Job Alignment Score": 0.0,
+      "Documentation Score": 100.0,
+      "TOTAL SCORE": 15.0,
+      "Suggestions": [
+        "Add README section: Overview",
+        "Add README section: Architecture",
+        "Add README section: Features",
+        "Add README section: Setup",
+        "Add README section: Usage",
+        "Add README section: Skills Demonstrated",
+        "Add README section: License",
+        "Increase AWS/cloud keywords and examples",
+        "Highlight practical skills relevant to CloudOps/DevOps jobs",
+        "Expand README with more details",
+        "Consider adding status badges"
+      ],
+      "File Counts": {
+        "Python": 3,
+        "Markdown": 1
+      },
+      "README Stats": {
+        "lines": 1,
+        "words": 4,
+        "chars": 30,
+        "has_badges": false,
+        "has_toc": false
+      }
+    }
+  }
+}
