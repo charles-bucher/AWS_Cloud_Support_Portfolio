@@ -1,28 +1,68 @@
+
+from botocore.exceptions import ClientError, BotoCoreError
+
+def safe_aws_call(func, description="AWS call"):
+    try:
+        return func()
+    except ClientError as e:
+        logger.error(f"{description} failed: {e.response['Error']['Code']}")
+    except BotoCoreError as e:
+        logger.error(f"{description} SDK failure: {e}")
+    return None
+
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 import boto3
 
 def get_account_info():
+    try:
     sts = boto3.client("sts")
+except BotoCoreError as e:
+    logger.critical("Failed to create sts client: {e}")
+    raise
+
     identity = sts.get_caller_identity()
-    print("AWS Account Info:")
-    print(f"  Account ID: {identity['Account']}")
-    print(f"  User ARN: {identity['Arn']}")
-    print(f"  User ID: {identity['UserId']}\n")
+    logger.info("AWS Account Info:")
+    logger.info(f"  Account ID: {identity['Account']}")
+    logger.info(f"  User ARN: {identity['Arn']}")
+    logger.info(f"  User ID: {identity['UserId']}\n")
 
 def list_regions():
+    try:
     ec2 = boto3.client("ec2")
+except BotoCoreError as e:
+    logger.critical("Failed to create ec2 client: {e}")
+    raise
+
     regions = [r['RegionName'] for r in ec2.describe_regions()['Regions']]
-    print("AWS Regions:")
-    print(f"  {', '.join(regions)}\n")
+    logger.info("AWS Regions:")
+    logger.info(f"  {', '.join(regions)}\n")
     return regions
 
 def list_s3_buckets():
+    try:
     s3 = boto3.client("s3")
+except BotoCoreError as e:
+    logger.critical("Failed to create s3 client: {e}")
+    raise
+
     buckets = [b['Name'] for b in s3.list_buckets()['Buckets']]
-    print("S3 Buckets:")
-    print(f"  {', '.join(buckets) if buckets else 'None'}\n")
+    logger.info("S3 Buckets:")
+    logger.info(f"  {', '.join(buckets) if buckets else 'None'}\n")
 
 def list_ec2_instances():
+    try:
     ec2 = boto3.client("ec2")
+except BotoCoreError as e:
+    logger.critical("Failed to create ec2 client: {e}")
+    raise
+
     instances = []
     for r in list_regions():
         regional_ec2 = boto3.client("ec2", region_name=r)
@@ -35,13 +75,13 @@ def list_ec2_instances():
                     "State": instance['State']['Name'],
                     "Region": r
                 })
-    print("EC2 Instances:")
+    logger.info("EC2 Instances:")
     if instances:
         for i in instances:
-            print(f"  {i['ID']} | {i['Type']} | {i['State']} | {i['Region']}")
+            logger.info(f"  {i['ID']} | {i['Type']} | {i['State']} | {i['Region']}")
     else:
-        print("  None")
-    print()
+        logger.info("  None")
+    logger.info()
 
 def list_lambda_functions():
     functions = []
@@ -54,13 +94,13 @@ def list_lambda_functions():
                 "Runtime": func['Runtime'],
                 "Region": r
             })
-    print("Lambda Functions:")
+    logger.info("Lambda Functions:")
     if functions:
         for f in functions:
-            print(f"  {f['Name']} | {f['Runtime']} | {f['Region']}")
+            logger.info(f"  {f['Name']} | {f['Runtime']} | {f['Region']}")
     else:
-        print("  None")
-    print()
+        logger.info("  None")
+    logger.info()
 
 if __name__ == "__main__":
     get_account_info()
